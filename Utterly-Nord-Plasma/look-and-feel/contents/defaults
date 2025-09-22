@@ -1,0 +1,14 @@
+[kcminputrc][Mouse]
+cursorTheme=Nordic-cursors
+
+[kdeglobals][General]
+ColorScheme=UtterlyNord
+
+[kdeglobals][Icons]
+Theme=breeze
+
+[kwinrc][WindowSwitcher]
+LayoutName=thumbnail_grid
+
+[plasmarc][Theme]
+name=Utterly-Round

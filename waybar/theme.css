@@ -1,0 +1,63 @@
+/* catppuccin-frappe */
+
+@define-color rosewater		#f2d5cf;
+@define-color flamingo		#eebebe;
+@define-color pink			#f4b8e4;
+@define-color mauve			#ca9ee6;
+@define-color red			#bf616a;
+@define-color maroon		#ea999c;
+@define-color peach			#ef9f76;
+@define-color yellow		#ebcb8b;
+@define-color green			#a3be8c;
+@define-color teal			#81c8be;
+@define-color sky			#99d1db;
+@define-color sapphire		#85c1dc;
+@define-color blue			#8caaee;
+@define-color lavender		#4c566a;
+@define-color text			#d8dee9;
+@define-color subtext1		#b5bfe2;
+@define-color subtext0		#a5adce;
+@define-color overlay2		#949cbb;
+@define-color overlay1		#838ba7;
+@define-color overlay0		#737994;
+@define-color surface2		#626880;
+@define-color surface1		#51576d;
+@define-color surface0		#3b4252;
+@define-color base			#2e3440;
+@define-color mantle		#5e81ac;
+@define-color crust			#2E3440;
+
+/*
+	br - border
+	bg - background
+	fg - foreground
+*/
+
+/* main colors */
+
+@define-color main-br		@subtext0;
+@define-color main-bg		@crust;
+@define-color main-fg		@text;
+@define-color accent		@lavender;
+@define-color hover-bg		@base;
+@define-color hover-fg		alpha(@text, 0.75);
+@define-color outline		shade(@crust, 0.81);
+
+/* module colors */
+
+@define-color workspaces	shade(@mantle, 0.75);
+@define-color temperature	shade(@mantle, 0.75);
+@define-color memory		@base;
+@define-color cpu			@surface0;
+@define-color time			@surface0;
+@define-color date			@base;
+@define-color tray			shade(@mantle, 0.75);
+@define-color volume		shade(@mantle, 0.75);
+@define-color backlight		@base;
+@define-color battery		@surface0;
+
+/* state colors */
+
+@define-color warning		@yellow;
+@define-color critical		@red;
+@define-color charging		@green;
