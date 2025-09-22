@@ -8,6 +8,7 @@ fi
 
 # List of packages to install
 packages=(
+    linux-lts-headers
     waybar
     alacritty
     dolphin
@@ -30,7 +31,6 @@ packages=(
     qt5-wayland
     qt6-wayland
     nerd-fonts
-    mako
     power-profiles-daemon
     libnotify
     celluloid
@@ -46,6 +46,19 @@ packages=(
     qtkeychain-qt6
     btop
     ddcutil
+    ttf-0xproto-nerd
+    kate
+    broadcom-wl-dkms
+    dosfstools
+    firewalld
+    intel-media-driver
+    kde-gtk-config
+    vulkan-intel
+    mesa
+    vulkan-radeon
+    bluez
+    bluez-utils
+    bluez-deprecated-tools
 )
 
 echo "📦 Installing packages: ${packages[*]}"
@@ -55,14 +68,14 @@ pacman -Syu --noconfirm
 
 for pkg in "${packages[@]}"; do
   if pacman -Qi "$pkg" &>/dev/null; then
-    echo "✅ $pkg is already installed"
+    echo "📥 $pkg is already installed"
   else
     echo "⬇️ Installing $pkg..."
     pacman -S --noconfirm "$pkg"
   fi
 done
 
-echo "✅ All packages processed."
+echo "✔️ All packages processed."
 
 
 
