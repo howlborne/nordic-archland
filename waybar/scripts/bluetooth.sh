@@ -1,94 +1,101 @@
 #!/usr/bin/env bash
-#
-# Connect to a Bluetooth device using bluetoothctl and fzf
-#
-# Author: Jesse Mirabel <github.com/sejjy>
-# Created: August 19, 2025
+
+# Bluetooth menu using bluetoothctl, fzf, and Alacritty
+# Author: Refactored by ChatGPT for terminal-based interaction
 # License: MIT
 
-gray='\033[1;30m'
-reset='\033[0m'
+# Constants
+BUSY_ICON=''
+SCAN_TIMEOUT=10
+TERM_CMD="alacritty -e"  # Change this if you use another terminal
 
-# shellcheck disable=SC1091
-source "$HOME/.config/waybar/scripts/theme-switcher.sh" 'fzf'
-
-status=$(bluetoothctl show | grep PowerState | awk '{print $2}')
-
-if [[ $status == 'off' ]]; then
-	bluetoothctl power on >/dev/null
-	notify-send 'Bluetooth On' -r 1925
+# Turn on Bluetooth if off
+status=$(bluetoothctl show | grep "Powered:" | awk '{print $2}')
+if [[ $status == "no" ]]; then
+    bluetoothctl power on >/dev/null
+    notify-send "Bluetooth" "Powered On" -i "$BUSY_ICON" -r 1925
 fi
 
-s=10
-bluetoothctl --timeout $s scan on >/dev/null &
+# Scan for devices
+bluetoothctl --timeout $SCAN_TIMEOUT scan on >/dev/null &
+sleep "$SCAN_TIMEOUT"
 
-for ((i = 1; i <= s; i++)); do
-	echo -en "\rScanning for devices... ${gray}press q to stop${reset} ($i/$s)"
-	echo -en '\033[s'
+# List devices: MAC + Name
+device_list=$(bluetoothctl devices | grep ^Device | while read -r _ mac_and_name; do
+    mac=$(echo "$mac_and_name" | awk '{print $1}')
+    name_from_list=$(echo "$mac_and_name" | cut -d' ' -f2-)
+    name_from_info=$(bluetoothctl info "$mac" | grep "Name:" | cut -d' ' -f2-)
+    display_name="${name_from_info:-$name_from_list}"
+    echo "$mac $display_name"
+done)
 
-	n=$(bluetoothctl devices | grep -c Device)
-	echo -en "\n\rDevices: $n"
-	echo -en '\033[u'
-
-	read -rs -n 1 -t 1
-
-	if [[ $REPLY == 'q' ]]; then
-		echo -en '\nScanning stopped'
-		break
-	fi
-done
-
-printf '\n\n\n'
-
-list=$(bluetoothctl devices | grep Device | cut -d' ' -f2-)
-
-if [[ -z $list ]]; then
-	notify-send 'Bluetooth' 'No devices found'
-	exit 1
+# Check if device list is empty
+if [[ -z "$device_list" ]]; then
+    notify-send "Bluetooth" "No devices found." -i "$BUSY_ICON"
+    exit 1
 fi
 
-header=$(printf '%-17s %s' 'Address' 'Name')
+# Use fzf to select a device
+selected_device=$(echo "$device_list" | fzf --prompt="Select Device: ")
 
-options=(
-	--border=sharp
-	--border-label=' Bluetooth Devices '
-	--ghost='Search'
-	--height=~100%
-	--header="$header"
-	--highlight-line
-	--info=inline-right
-	--pointer=
-	--reverse
-)
-# shellcheck disable=SC2154
-options+=("${colors[@]}")
+# Exit if nothing selected
+[[ -z "$selected_device" ]] && exit 0
 
-address=$(fzf "${options[@]}" <<<"$list" | awk '{print $1}')
+# Extract MAC and Name
+mac=$(echo "$selected_device" | awk '{print $1}')
+name=$(echo "$selected_device" | cut -d' ' -f2-)
 
-[[ -z $address ]] && exit 0
+# Show action menu for selected device
+action=$(printf "Connect\nDisconnect\nInfo" | fzf --prompt="Action for $mac: ")
 
-connected=$(bluetoothctl info "$address" | grep Connected | awk '{print $2}')
+# Exit if no action selected
+[[ -z "$action" ]] && exit 0
 
-if [[ $connected == 'yes' ]]; then
-	notify-send 'Bluetooth' 'Already connected to this device'
-	exit 0
-fi
+# Perform selected action
+case "$action" in
+    "Info")
+        $TERM_CMD bash -c "bluetoothctl info '$mac' | less"
+        ;;
 
-paired=$(bluetoothctl info "$address" | grep Paired | awk '{print $2}')
+    "Connect")
+        connected=$(bluetoothctl info "$mac" | grep "Connected:" | awk '{print $2}')
+        if [[ $connected == "yes" ]]; then
+            notify-send "Bluetooth" "Already connected to $name" -i "$BUSY_ICON"
+            exit 0
+        fi
 
-if [[ $paired == 'no' ]]; then
-	echo 'Pairing...'
+        paired=$(bluetoothctl info "$mac" | grep "Paired:" | awk '{print $2}')
+        if [[ $paired == "no" ]]; then
+            notify-send "Bluetooth" "Pairing with $name..." -i "$BUSY_ICON"
+            if ! timeout 10 bluetoothctl pair "$mac" >/dev/null; then
+                notify-send "Bluetooth" "Failed to pair with $name" -i "$BUSY_ICON"
+                exit 1
+            fi
+        fi
 
-	if ! timeout $s bluetoothctl pair "$address" >/dev/null; then
-		notify-send 'Bluetooth' 'Failed to pair'
-		exit 1
-	fi
-fi
+        # Trust the device after pairing (or just in case it's not trusted)
+        trusted=$(bluetoothctl info "$mac" | grep "Trusted:" | awk '{print $2}')
+        if [[ $trusted == "no" ]]; then
+            notify-send "Bluetooth" "Trusting $name..." -i "$BUSY_ICON"
+            bluetoothctl trust "$mac" >/dev/null
+        fi
 
-echo 'Connecting...'
+        notify-send "Bluetooth" "Connecting to $name..." -i "$BUSY_ICON"
+        if timeout 10 bluetoothctl connect "$mac" >/dev/null; then
+            notify-send "Bluetooth" "Connected to $name" -i "$BUSY_ICON"
+        else
+            notify-send "Bluetooth" "Failed to connect to $name" -i "$BUSY_ICON"
+        fi
+        ;;
 
-if timeout $s bluetoothctl connect "$address" >/dev/null; then
-	notify-send 'Bluetooth' 'Successfully connected'
-else
-	notify-send 'Bluetooth' 'Failed to connect'
-fi
+    "Disconnect")
+        connected=$(bluetoothctl info "$mac" | grep "Connected:" | awk '{print $2}')
+        if [[ $connected == "yes" ]]; then
+            notify-send "Bluetooth" "Disconnecting from $name..." -i "$BUSY_ICON"
+            bluetoothctl disconnect "$mac" >/dev/null
+            notify-send "Bluetooth" "Disconnected from $name" -i "$BUSY_ICON"
+        else
+            notify-send "Bluetooth" "$name is not connected" -i "$BUSY_ICON"
+        fi
+        ;;
+esac

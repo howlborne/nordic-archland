@@ -1,13 +1,12 @@
-@import "styles/modules-center.css";
 @import "styles/modules-left.css";
+@import "styles/modules-center.css";
 @import "styles/modules-right.css";
 @import "theme.css";
 
 * {
-	/*font-family: "0xProto Nerd Font";*/
 	font-family: "JetBrains Mono";
 	font-weight: bold;
-	font-size: 16px;
+	font-size: 14px;
 	color: @main-fg;
 }
 
@@ -27,12 +26,9 @@ window#waybar > box {
 
 /* hoverables */
 
-#custom-theme_switcher:hover,
-#idle_inhibitor:hover,
 #clock.date:hover,
 #network:hover,
 #bluetooth:hover,
-#custom-system_update:hover,
 #mpris:hover,
 #pulseaudio:hover {
 	color: @hover-fg;
@@ -54,18 +50,18 @@ window#waybar > box {
 
 #custom-left_inv,
 #custom-right_inv {
-	font-size: 29px;
+	font-size: 28px;
 }
 
 /* buttons */
 
 button {
-	border-radius: 16px;
-	padding: 0 10px;
+	border-radius: 15px;
+	padding: 0 6px;
+	margin: 2px
 }
 button:hover {
 	background-color: @hover-bg;
-	color: @hover-fg;
 }
 
 /* tooltips */

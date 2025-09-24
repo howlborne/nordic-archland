@@ -59,6 +59,11 @@ packages=(
     bluez
     bluez-utils
     bluez-deprecated-tools
+    hyprlock
+    rofi
+    nwg-look
+    greetd
+    fzf
 )
 
 echo "📦 Installing packages: ${packages[*]}"

@@ -2,91 +2,86 @@
 
 /* temperature */
 
-#custom-left_div.2 {
-	color: @temperature;
+#custom-left_div.1 {
+	color: @accent-light;
+	padding-left: 20px;
 }
 #temperature {
-	background-color: @temperature;
+	background-color: @accent-light;
 }
 
 /* memory */
 
-#custom-left_div.3 {
-	background-color: @temperature;
-	color: @memory;
+#custom-left_div.2 {
+	background-color: @accent-light;
+	color: @main-bg;
 }
 #memory {
-	background-color: @memory;
+	background-color: @main-bg;
 }
 
 /* cpu */
 
-#custom-left_div.4 {
-	background-color: @memory;
-	color: @cpu;
+#custom-left_div.3 {
+	background-color: @main-bg;
+	color: @accent;
 }
 #cpu {
-	background-color: @cpu;
+	background-color: @accent;
 }
 #custom-left_inv.1 {
-	color: @cpu;
+	color: @accent;
 }
 
 /* distro icon */
 
-#custom-left_div.5,
-#custom-right_div.2 {
-	color: @accent;
+#custom-left_div.4,
+#custom-right_div.3 {
+	color: @accent-distro;
 }
 #custom-distro {
 	padding: 0 10px 2px 4px;
 	font-size: 26px;
-	background-color: @accent;
-	color: @mantle;
+	background-color: @accent-distro;
+	color: @main-fg;
 }
 
 /* idle inhibitor & time */
 
-#custom-right_inv.1 {
-	color: @time;
-}
-#idle_inhibitor {
-	background-color: @time;
+#custom-right_inv.3 {
+	color: @accent;
 }
 #clock.time {
-	padding-right: 6px;
-	background-color: @time;
+	padding-left: 12px;
+	padding-right: 10px;
+	background-color: @accent;
 }
-#custom-right_div.3 {
-	background-color: @date;
-	color: @time;
+#custom-right_div.4 {
+	background-color: @main-bg;
+	color: @accent;
 }
 
 /* date */
 
 #clock.date {
 	padding-left: 6px;
-	background-color: @date;
+	background-color: @main-bg;
 }
-#custom-right_div.4 {
-	background-color: @tray;
-	color: @date;
+#custom-right_div.5 {
+	background-color: @accent-light;
+	color: @main-bg;
 }
 
 /* quick settings */
 
 #network {
-	background-color: @tray;
+	background-color: @accent-light;
 	padding: 0 6px 0 4px;
 }
 #bluetooth {
-	background-color: @tray;
+	background-color: @accent-light;
 	padding: 0 5px;
 }
-#custom-system_update {
-	background-color: @tray;
-	padding: 0 8px 0 2px;
-}
-#custom-right_div.5 {
-	color: @tray;
+#custom-right_div.6 {
+	color: @accent-light;
 }

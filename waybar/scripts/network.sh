@@ -1,69 +1,88 @@
 #!/usr/bin/env bash
-#
-# Connect to a Wi-Fi network using nmcli and fzf
-#
-# Author: Jesse Mirabel <github.com/sejjy>
-# Created: August 11, 2025
-# License: MIT
 
-# shellcheck disable=SC1091
-source "$HOME/.config/waybar/scripts/theme-switcher.sh" 'fzf'
+# Wi-Fi Manager using nmcli + fzf
+# Author: You + ChatGPT
+# Requirements: nmcli, fzf, notify-send
+# Launch with: alacritty -e ~/scripts/wifi_fzf.sh
 
-status=$(nmcli radio wifi)
+WIFI_ICON=''
+SCAN_TIMEOUT=5
 
-if [[ $status == 'disabled' ]]; then
-	nmcli radio wifi on
-	notify-send 'Wi-Fi Enabled' -r 1125
+# Enable Wi-Fi if off
+if [[ $(nmcli radio wifi) == 'disabled' ]]; then
+    nmcli radio wifi on
+    notify-send 'Wi-Fi' 'Enabled' -i "$WIFI_ICON"
 fi
 
-nmcli device wifi rescan 2>/dev/null
+# Start scan in background
+nmcli device wifi rescan >/dev/null 2>&1 &
+sleep 1
 
-s=5
-for ((i = 1; i <= s; i++)); do
-	echo -en "\rScanning for networks... ($i/$s)"
-
-	output=$(timeout 1 nmcli device wifi list)
-	list=$(tail -n +2 <<<"$output" | awk '$2 != "--"')
-
-	[[ -n $list ]] && break
+# Wait up to SCAN_TIMEOUT for networks
+for ((i = 1; i <= SCAN_TIMEOUT; i++)); do
+    output=$(nmcli -f SSID,SECURITY,SIGNAL device wifi list --rescan no)
+    list=$(tail -n +2 <<<"$output" | awk '$1 != ""')
+    [[ -n $list ]] && break
+    sleep 1
 done
 
-printf '\n\n'
-
 if [[ -z $list ]]; then
-	notify-send 'Wi-Fi' 'No networks found'
-	exit 1
+    notify-send 'Wi-Fi' 'No networks found' -i "$WIFI_ICON"
+    exit 1
 fi
 
-header=$(head -n 1 <<<"$output")
+# Use a safe delimiter
+formatted=$(echo "$list" | awk '{printf "%s:::%s:::%s\n", $1, $2, $3}')
+selection=$(echo "$formatted" | fzf --delimiter=":::" --with-nth=1,2,3 \
+    --preview='echo -e "SSID: {1}\nSecurity: {2}\nSignal: {3}"' \
+    --prompt="Wi-Fi Networks > " --height=20 --reverse)
 
-options=(
-	--border=sharp
-	--border-label=' Wi-Fi Networks '
-	--ghost='Search'
-	--header="$header"
-	--height=~100%
-	--highlight-line
-	--info=inline-right
-	--pointer=
-	--reverse
-)
-# shellcheck disable=SC2154
-options+=("${colors[@]}")
+[[ -z $selection ]] && exit 0
 
-bssid=$(fzf "${options[@]}" <<<"$list" | awk '{print $1}')
+# Extract SSID from selection
+ssid=$(echo "$selection" | cut -d':' -f1)
 
-[[ -z $bssid ]] && exit 0
+# Determine connection state
+active_ssid=$(nmcli -t -f active,ssid dev wifi | grep '^yes' | cut -d: -f2)
+known_connections=$(nmcli connection show | awk '{print $1}' | grep -Fx "$ssid")
 
-if [[ $bssid == '*' ]]; then
-	notify-send 'Wi-Fi' 'Already connected to this network'
-	exit 0
+# Build action list dynamically
+actions=()
+if [[ "$ssid" == "$active_ssid" ]]; then
+    actions+=("Disconnect")
 fi
-
-echo 'Connecting...'
-
-if nmcli device wifi connect "$bssid" --ask; then
-	notify-send 'Wi-Fi' 'Successfully connected'
-else
-	notify-send 'Wi-Fi' 'Failed to connect'
+if [[ -n "$known_connections" ]]; then
+    actions+=("Forget")
 fi
+actions+=("Connect")
+actions+=("More Info")
+
+# Choose action
+action=$(printf "%s\n" "${actions[@]}" | fzf --prompt="Action for '$ssid' > " --reverse --height=10)
+
+[[ -z $action ]] && exit 0
+
+# Handle action
+case "$action" in
+    "Connect")
+        notify-send 'Wi-Fi' "Connecting to '$ssid'..." -i "$WIFI_ICON"
+        if nmcli device wifi connect "$ssid" --ask; then
+            notify-send 'Wi-Fi' "Connected to '$ssid'" -i "$WIFI_ICON"
+        else
+            notify-send 'Wi-Fi' "Failed to connect to '$ssid'" -i "$WIFI_ICON"
+        fi
+        ;;
+    "Disconnect")
+        nmcli connection down "$ssid"
+        notify-send 'Wi-Fi' "Disconnected from '$ssid'" -i "$WIFI_ICON"
+        ;;
+    "Forget")
+        nmcli connection delete "$ssid"
+        notify-send 'Wi-Fi' "Forgotten network '$ssid'" -i "$WIFI_ICON"
+        ;;
+    "More Info")
+        info=$(nmcli -f all device wifi list | grep -A 5 "$ssid")
+        echo -e "Details for $ssid:\n\n$info"
+        read -n 1 -s -r -p "Press any key to exit..."
+        ;;
+esac
