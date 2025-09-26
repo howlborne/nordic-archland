@@ -8,6 +8,7 @@
 }
 #temperature {
 	background-color: @accent-light;
+	text-shadow: 0 0 2px @main-bg;
 }
 
 /* memory */
@@ -28,6 +29,7 @@
 }
 #cpu {
 	background-color: @accent;
+	text-shadow: 0 0 2px @main-bg;
 }
 #custom-left_inv.1 {
 	color: @accent;
@@ -44,6 +46,7 @@
 	font-size: 26px;
 	background-color: @accent-distro;
 	color: @main-fg;
+	text-shadow: 0 0 5px @main-bg;
 }
 
 /* idle inhibitor & time */
@@ -55,6 +58,7 @@
 	padding-left: 12px;
 	padding-right: 10px;
 	background-color: @accent;
+	text-shadow: 0 0 2px @main-bg;
 }
 #custom-right_div.4 {
 	background-color: @main-bg;
@@ -77,10 +81,12 @@
 #network {
 	background-color: @accent-light;
 	padding: 0 6px 0 4px;
+	text-shadow: 0 0 2px @main-bg;
 }
 #bluetooth {
 	background-color: @accent-light;
 	padding: 0 5px;
+	text-shadow: 0 0 2px @main-bg;
 }
 #custom-right_div.6 {
 	color: @accent-light;

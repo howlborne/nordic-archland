@@ -69,9 +69,9 @@ inputbar {
 	padding: 11px;
 	background-color: #3b4252;
 
-	border: 1px;
+	border: 2px;
 	border-radius:  6px 6px 0px 0px;
-	border-color: @nord10;
+	border-color: rgb(216,222,233,0.88);
 }
 
 entry, prompt, case-indicator {
@@ -86,8 +86,8 @@ prompt {
 listview {
 	padding: 8px;
 	border-radius: 0px 0px 6px 6px;
-	border-color: @nord10;
-	border: 0px 1px 1px 1px;
+	border-color: rgb(216,222,233,0.88);
+	border: 0px 2px 2px 2px;
 	background-color: rgba(46,52,64,0.9);
 	dynamic: false;
 }
@@ -102,7 +102,7 @@ element {
 }
 
 element selected.normal {
-	background-color: @nord7;
+	background-color: rgba(129,161,193,1);
 	text-color: #2e3440;
 }
 

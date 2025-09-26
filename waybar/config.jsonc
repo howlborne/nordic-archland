@@ -33,7 +33,8 @@
 		"custom/right_div#6"
 	],
 	"modules-right": [
-		"mpris",
+		//"mpris",
+		"custom/cava",
 		"power-profiles-daemon",
 		"custom/left_div#5",
 		"group/pulseaudio",
@@ -73,7 +74,6 @@
 	/*-------------
 		modules
 	-------------*/
-
 	"power-profiles-daemon": {
 		"format": "{icon}",
 		"tooltip-format": "Power profile: {profile}\nDriver: {driver}",
@@ -453,6 +453,14 @@
 	"custom/distro": {
 		"format": "󰣇",
 		"tooltip": false
+	},
+
+	"custom/cava": {
+		"format": "{text}",
+		"exec": "python3 ~/.config/waybar/cava_module.py",
+		"return-type": "json",
+		"tooltip": true,
+		"on-click": "playerctl play-pause"
 	},
 
 	/*-------------------

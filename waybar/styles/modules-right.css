@@ -7,6 +7,14 @@
 	font-weight: bold;
 }
 
+#custom-cava {
+	padding-right: 15px;
+/*	background-color: @main-bg;
+	color: @main-fg;*/
+
+	font-weight: bold;
+}
+
 /* power-profiles-daemon */
 
 #power-profiles-daemon {
@@ -20,6 +28,7 @@
 }
 #pulseaudio {
 	background-color: @accent-light;
+	text-shadow: 0 0 2px @main-bg;
 }
 
 /* brightness */
@@ -50,10 +59,6 @@
 /* power menu */
 
 #custom-power_menu {
-	border-radius: 16px;
 	padding: 0 19px 0 16px;
 	font-size: 20px;
-}
-#custom-power_menu:hover {
-	background-color: @hover-bg;
 }

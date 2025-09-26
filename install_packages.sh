@@ -64,6 +64,11 @@ packages=(
     nwg-look
     greetd
     fzf
+    wl-clipboard
+    hypridle
+    cava
+    wl-clip-persist
+    dunst
 )
 
 echo "📦 Installing packages: ${packages[*]}"

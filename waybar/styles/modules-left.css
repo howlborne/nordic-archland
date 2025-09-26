@@ -22,6 +22,7 @@
 #workspaces {
 /* 	padding: 0 1px; */
 	background-color: @accent-light;
+	text-shadow: 0 0 2px @main-bg;
 }
 #workspaces .active label {
 	font-size: 23px;

@@ -23,6 +23,9 @@ sudo cp -r ./Cursors/Nordzy-hyprcursors /usr/share/icons
 mkdir -p ~/.local/share/color-schemes
 cp ./Themes/Utterly-Nord-Plasma/UtterlyNord.colors ~/.local/share/color-schemes
 
+# Nordzy-dark icons
+sudo cp -r ./Themes/Nordzy-dark /usr/share/icons
+
 # Applying Nordic theme for GTK3/4
 sudo cp -r ./Themes/Nordic-bluish-accent ./Themes/Nordic-bluish-accent-v40 /usr/share/themes
 cp ./Themes/gtk-3.0/settings.ini $HOME/.config/gtk-3.0
