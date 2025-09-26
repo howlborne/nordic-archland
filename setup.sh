@@ -12,6 +12,9 @@ sudo ./install_packages.sh
 mkdir -p $HOME/.config
 cp -r ./alacritty ./btop ./hypr ./waybar ./rofi ./xdg-desktop-portal $HOME/.config
 
+# greetd config file for my user //change for yours//
+sudo cp ./greetd/config.toml /etc/greetd
+
 # Copying wallpapers
 cp ./Pictures/* $HOME/Pictures
 
