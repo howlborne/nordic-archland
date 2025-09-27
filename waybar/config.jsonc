@@ -152,12 +152,12 @@
 
 	"clock#time": {
 		// "interval":
-		"format": "⌛ {:%H:%M}",
+		"format": "{:%H:%M}",
 		// "timezone":
 		// "timezones":
 		// "locale":
 		"min-length": 5,
-		"max-length": 7,
+		"max-length": 8,
 		// "rotate": 0,
 		// "on-click":
 		// "on-click-middle":

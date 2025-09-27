@@ -4,7 +4,7 @@
 
 #custom-left_div.1 {
 	color: @accent-light;
-	padding-left: 20px;
+	padding-left: 10px;
 }
 #temperature {
 	background-color: @accent-light;
@@ -80,7 +80,7 @@
 
 #network {
 	background-color: @accent-light;
-	padding: 0 6px 0 4px;
+	padding: 0 6px 0 8px;
 	text-shadow: 0 0 2px @main-bg;
 }
 #bluetooth {

@@ -21,7 +21,6 @@ packages=(
     pipewire-audio
     pipewire-alsa
     pipewire-pulse
-    pipewire-jack
     pamixer
     hyprpaper
     xdg-desktop-portal-hyprland
@@ -46,7 +45,6 @@ packages=(
     qtkeychain-qt6
     btop
     ddcutil
-    ttf-0xproto-nerd
     kate
     broadcom-wl-dkms
     dosfstools
@@ -69,6 +67,9 @@ packages=(
     cava
     wl-clip-persist
     dunst
+    mpv-mpris
+    github-cli
+    pipewire-jack
 )
 
 echo "📦 Installing packages: ${packages[*]}"
