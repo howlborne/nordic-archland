@@ -71,6 +71,7 @@ packages=(
     github-cli
     pipewire-jack
     uv
+    starship
 )
 
 echo "📦 Installing packages: ${packages[*]}"

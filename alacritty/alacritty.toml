@@ -2,22 +2,22 @@
 
 [window]
 # decorations = "none"
-opacity = 0.95
-padding.x = 0
+opacity = 1
+padding.x = 5
 padding.y = 0
 
 [font]
 normal.family = "JetBrains Mono"
 normal.style = "Bold"
-size = 11.0
+size = 12.0
 
-# [font.offset]
-# x = 0
-# y = 0
-#
-# [font.glyph_offset]
-# x = 0
-# y = 0
+[font.offset]
+x = 0
+y = -1
+
+[font.glyph_offset]
+x = 0
+y = 0
 
 [colors.primary]
 background = "#2E3440"

@@ -132,10 +132,18 @@
       }
     },
     {
-      "type": "separator",
-      "string": "",
-      "outputColor": "#4C556A",
-      "times": 0
+      "type": "colors",
+      "key": " ",
+      "keyIcon": " ",
+      "symbol": "circle",
+      "paddingLeft": 0,
+      "block": {
+        "width": 3,
+        "range": [
+          0,
+          15
+        ]
+      }
     },
     {
       "type": "os",
@@ -167,11 +175,6 @@
       "keyIcon": " ",
       "detectPlugin": false
     },
-
-
-
-
-
     {
       "type": "terminal",
       "keyIcon": " "
