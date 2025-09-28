@@ -10,7 +10,7 @@ sudo ./install_packages.sh
 
 # Copying .config files
 mkdir -p $HOME/.config
-cp -r ./alacritty ./btop ./dunst ./hypr ./waybar ./rofi ./xdg-desktop-portal $HOME/.config
+cp -r ./alacritty ./btop ./dunst ./fastfetch ./hypr ./waybar ./rofi ./starship ./xdg-desktop-portal $HOME/.config
 
 # greetd config file for my user //change for yours//
 sudo cp ./greetd/config.toml /etc/greetd
@@ -36,6 +36,10 @@ mkdir -p $HOME/.config/gtk-3.0
 mkdir -p $HOME/.config/gtk-4.0
 cp ./Themes/gtk-3.0/settings.ini $HOME/.config/gtk-3.0
 cp ./Themes/gtk-4.0/settings.ini $HOME/.config/gtk-4.0
+
+# starship & fastfetch >> .bashrc
+echo 'fastfetch --config $HOME/.config/alacritty/fastfetch/config.jsonc' >> ~/.bashrc
+echo 'eval "$(starship init bash)"' >> ~/.bashrc
 
 # Fix for Broadcom Inc. and subsidiaries BCM4360 802.11ac Dual Band Wireless Network Adapter (rev 03)
 sudo cp ./broadcom-wl-dkms.conf /etc/modprobe.d

@@ -13,6 +13,7 @@ yes | makepkg -sci --noconfirm
 aur_packages=(
     brave-bin
     hyprshot
+    localsend-bin
 )
 
 for pkg in "${aur_packages[@]}"; do

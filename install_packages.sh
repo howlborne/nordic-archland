@@ -70,6 +70,7 @@ packages=(
     mpv-mpris
     github-cli
     pipewire-jack
+    uv
 )
 
 echo "📦 Installing packages: ${packages[*]}"
@@ -82,7 +83,7 @@ for pkg in "${packages[@]}"; do
     echo "📥 $pkg is already installed"
   else
     echo "⬇️ Installing $pkg..."
-    pacman -S --noconfirm "$pkg"
+    yes | pacman -S --noconfirm "$pkg"
   fi
 done
 
