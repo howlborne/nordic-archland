@@ -1,8 +1,8 @@
 #!/bin/bash
 
 echo "🛠️ Making AUR Directory"
-mkdir AUR
-cd AUR
+mkdir $HOME/AUR
+cd $HOME/AUR
 
 git clone https://aur.archlinux.org/yay.git
 cd yay
