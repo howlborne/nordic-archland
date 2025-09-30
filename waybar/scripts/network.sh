@@ -3,7 +3,7 @@
 # Wi-Fi Manager using nmcli + fzf
 # Author: You + ChatGPT
 # Requirements: nmcli, fzf, notify-send
-# Launch with: alacritty -e ~/scripts/wifi_fzf.sh
+# Launch with: kitty -e ~/scripts/wifi_fzf.sh
 
 WIFI_ICON=''
 SCAN_TIMEOUT=5

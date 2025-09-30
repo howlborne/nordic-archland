@@ -25,7 +25,7 @@
 	text-shadow: 0 0 2px @main-bg;
 }
 #workspaces .active label {
-	font-size: 23px;
+	font-size: 18px;
 	color: @main-fg;
 }
 

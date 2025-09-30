@@ -16,3 +16,4 @@ ln -sf /usr/lib/mpv-mpris/mpris.so ~/.config/mpv/
 # pipewire-jack instead of jack2
 yes | sudo pacman -S pipewire-jack --noconfirm
 
+reboot

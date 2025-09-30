@@ -7,7 +7,7 @@
 # Constants
 BUSY_ICON=''
 SCAN_TIMEOUT=10
-TERM_CMD="alacritty -e"  # Change this if you use another terminal
+TERM_CMD="kitty -e"  # Change this if you use another terminal
 
 # Turn on Bluetooth if off
 status=$(bluetoothctl show | grep "Powered:" | awk '{print $2}')

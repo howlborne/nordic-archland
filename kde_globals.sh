@@ -8,10 +8,10 @@ cp "$KDEGLOBALS" "$BACKUP"
 echo "Backup created at: $BACKUP"
 
 # Only add if not already set
-if ! grep -q "^TerminalApplication=alacritty" "$KDEGLOBALS"; then
+if ! grep -q "^TerminalApplication=kitty" "$KDEGLOBALS"; then
     # Use sed to insert after [General] section
     sed -i '/^\[General\]/{
-        a TerminalApplication=alacritty
+        a TerminalApplication=kitty
     }' "$KDEGLOBALS"
 fi
 

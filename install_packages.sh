@@ -10,7 +10,7 @@ fi
 packages=(
     linux-lts-headers
     waybar
-    alacritty
+    kitty
     dolphin
     ark
     ntfs-3g
@@ -29,12 +29,12 @@ packages=(
     systemsettings
     qt5-wayland
     qt6-wayland
-    nerd-fonts
     power-profiles-daemon
     libnotify
     celluloid
     cargo
     ttf-jetbrains-mono
+    ttf-0xproto-nerd
     xdg-user-dirs
     man-db
     man-pages
@@ -72,6 +72,7 @@ packages=(
     pipewire-jack
     uv
     starship
+    obs-studio
 )
 
 echo "📦 Installing packages: ${packages[*]}"

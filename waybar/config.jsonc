@@ -133,7 +133,7 @@
 		// "rotate":
 		"min-length": 2,
 		"max-length": 2,
-		"on-click": "alacritty -e ~/.config/waybar/scripts/bluetooth.sh",
+		"on-click": "kitty -e ~/.config/waybar/scripts/bluetooth.sh",
 		// "on-click-middle":
 		"on-click-right": "bluetoothctl power off && notify-send 'Bluetooth Off' -r 1925",
 		// "on-scroll-up":
@@ -298,7 +298,7 @@
 		// "rotate":
 		"min-length": 2,
 		"max-length": 2,
-		"on-click": "alacritty -e ~/.config/waybar/scripts/network.sh",
+		"on-click": "kitty -e ~/.config/waybar/scripts/network.sh",
 		// "on-click-middle":
 		"on-click-right": "nmcli radio wifi off && notify-send 'Wi-Fi Disabled' -r 1125",
 		// "on-scroll-up":
@@ -411,7 +411,7 @@
 		"format": "{}",
 		"rewrite": {
 			"^$": "Desktop",
-			"^alacritty$": "Terminal",
+			"^kitty$": "Terminal",
 			"^bash$": "Terminal",
 			"^~$": "Terminal"
 		},
