@@ -17,3 +17,4 @@ ln -sf /usr/lib/mpv-mpris/mpris.so ~/.config/mpv/
 yes | sudo pacman -S pipewire-jack --noconfirm
 
 reboot
+
