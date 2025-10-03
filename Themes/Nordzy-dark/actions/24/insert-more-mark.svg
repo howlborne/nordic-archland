@@ -4,7 +4,7 @@
    .ColorScheme-Text { color:#d8dee9; } .ColorScheme-Highlight { color:#88c0d0; } .ColorScheme-NeutralText { color:#d08770; } .ColorScheme-PositiveText { color:#a3be8c; } .ColorScheme-NegativeText { color:#bf616a; }
   </style>
  </defs>
- <g transform="translate(1,1)" fill="currentColor">
+ <g transform="translate(1,1)" fill="#d8dee9">
   <path class="ColorScheme-Text" d="m3 3v1h16v-1h-16zm0 2v1h9v-1h-9zm0 10v1h16v-1h-16zm0 2v1h13v-1h-13zm14 1v1h2v-1h-2z"/>
   <path class="ColorScheme-Highlight" d="m3 10v1h16v-1h-16z"/>
  </g>

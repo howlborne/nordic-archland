@@ -39,12 +39,12 @@
 
 #custom-left_div.4,
 #custom-right_div.3 {
-	color: @accent-distro;
+	color: @accent-light;
 }
 #custom-distro {
 	padding: 0 10px 2px 4px;
 	font-size: 26px;
-	background-color: @accent-distro;
+	background-color: @accent-light;
 	color: @main-fg;
 	text-shadow: 0 0 5px @main-bg;
 }
