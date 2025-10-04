@@ -13,7 +13,7 @@
 /* main outline */
 
 window#waybar {
-	background-color: rgba(40, 46, 56, 0.8);		/*shade(@main-bg, 0.88) conversion to rgba for better opacity handling*/
+	background-color: rgba(40, 46, 56, 0.88);		/*shade(@main-bg, 0.88) conversion to rgba for better opacity handling*/
 }
 
 /* main background */
@@ -68,7 +68,7 @@ button:hover {
 tooltip {
 	border: 2px solid @main-br;
 	border-radius: 10px;
-	background-color: @main-bg;
+	background-color: rgba(46, 52, 64, 0.88);
 }
 tooltip label {
 	margin: 2px 4px;

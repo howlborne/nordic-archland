@@ -16,7 +16,8 @@ cp -r ./kitty ./btop ./dunst ./fastfetch ./hypr ./waybar ./rofi ./starship ./xdg
 sudo cp ./greetd/config.toml /etc/greetd
 
 # Copying wallpapers
-cp ./Pictures/* $HOME/Pictures
+mkdir -p $HOME/Pictures/hyprpaper-wallpapers
+cp ./Pictures/* $HOME/Pictures/hyprpaper-wallpapers
 
 # Copying cursors
 sudo cp -r ./Cursors/Nordzy-hyprcursors /usr/share/icons
