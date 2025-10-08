@@ -73,6 +73,10 @@ packages=(
     uv
     starship
     obs-studio
+    yt-dlp
+    kio-admin
+    xorg-xhost
+    timeshift
 )
 
 echo "📦 Installing packages: ${packages[*]}"

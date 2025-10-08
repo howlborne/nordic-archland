@@ -12,6 +12,9 @@ sudo ./install_packages.sh
 mkdir -p $HOME/.config
 cp -r ./kitty ./btop ./dunst ./fastfetch ./hypr ./waybar ./rofi ./starship ./xdg-desktop-portal $HOME/.config
 
+# for root user
+sudo cp -r ./kitty ./btop ./dunst ./fastfetch ./hypr ./waybar ./rofi ./starship ./xdg-desktop-portal /root/.config
+
 # greetd config file for my user //change for yours//
 sudo cp ./greetd/config.toml /etc/greetd
 
@@ -19,24 +22,29 @@ sudo cp ./greetd/config.toml /etc/greetd
 mkdir -p $HOME/Pictures/hyprpaper-wallpapers
 cp ./Pictures/* $HOME/Pictures/hyprpaper-wallpapers
 
+# Copying wallpapers for root user
+sudo mkdir -p /root/Pictures/hyprpaper-wallpapers
+sudo cp ./Pictures/* /root/Pictures/hyprpaper-wallpapers
+
 # Copying cursors
 sudo cp -r ./Cursors/Nordzy-hyprcursors /usr/share/icons
 
 # Applying Utterly Nord Color Scheme for KDE Apps
 #Color-Scheme
-mkdir -p ~/.local/share/color-schemes
-cp ./Themes/Utterly-Nord-Plasma/UtterlyNord.colors ~/.local/share/color-schemes
+sudo cp ./Themes/Utterly-Nord-Plasma/UtterlyNord.colors /usr/share/color-schemes
 
 # Nordzy-dark icons
 sudo cp -r ./Themes/Nordzy-dark /usr/share/icons
 
 # Applying Nordic theme for GTK3/4
 sudo cp -r ./Themes/Nordic-bluish-accent ./Themes/Nordic-bluish-accent-v40 /usr/share/themes
-
 mkdir -p $HOME/.config/gtk-3.0
 mkdir -p $HOME/.config/gtk-4.0
 cp ./Themes/gtk-3.0/settings.ini $HOME/.config/gtk-3.0
 cp ./Themes/gtk-4.0/settings.ini $HOME/.config/gtk-4.0
+# for root user
+sudo cp ./Themes/gtk-3.0/settings.ini /root/.config/gtk-3.0
+sudo cp ./Themes/gtk-4.0/settings.ini /root/.config/gtk-4.0
 
 # starship & fastfetch >> .bashrc
 echo 'fastfetch --config $HOME/.config/kitty/fastfetch/config.jsonc' >> ~/.bashrc
@@ -53,6 +61,9 @@ sudo modprobe i2c-dev
 sudo systemctl enable bluetooth.service
 sudo systemctl enable firewalld.service
 sudo systemctl enable greetd.service
+sudo systemctl enable cronie.service
 
+echo "rebooting..."
+sleep 2
 reboot
 
