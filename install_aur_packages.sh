@@ -20,3 +20,6 @@ for pkg in "${aur_packages[@]}"; do
     echo "⬇️ Installing $pkg..."
     yay -S --noconfirm "$pkg"
 done
+
+cd $HOME
+rm -r ./AUR

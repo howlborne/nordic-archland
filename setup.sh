@@ -2,6 +2,9 @@
 
 xdg-user-dirs-update
 
+# pacman.conf
+sudo ./pacman_conf.sh
+
 # Installing needed packages
 sudo ./install_packages.sh
 
