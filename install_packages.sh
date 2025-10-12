@@ -77,6 +77,7 @@ packages=(
     kio-admin
     xorg-xhost
     timeshift
+    eza
 )
 
 echo "📦 Installing packages: ${packages[*]}"

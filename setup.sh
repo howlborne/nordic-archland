@@ -49,6 +49,9 @@ cp ./Themes/gtk-4.0/settings.ini $HOME/.config/gtk-4.0
 sudo cp ./Themes/gtk-3.0/settings.ini /root/.config/gtk-3.0
 sudo cp ./Themes/gtk-4.0/settings.ini /root/.config/gtk-4.0
 
+# aliases
+echo "alias ls='eza -all'" >> ~/.bashrc
+
 # starship & fastfetch >> .bashrc
 echo 'fastfetch --config $HOME/.config/kitty/fastfetch/config.jsonc' >> ~/.bashrc
 echo 'eval "$(starship init bash)"' >> ~/.bashrc
