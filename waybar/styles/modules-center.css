@@ -49,7 +49,7 @@
 	text-shadow: 0 0 5px @main-bg;
 }
 
-/* idle inhibitor & time */
+/* time */
 
 #custom-right_inv.3 {
 	color: @accent;
@@ -76,7 +76,7 @@
 	color: @main-bg;
 }
 
-/* quick settings */
+/* network/quick settings */
 
 #network {
 	background-color: @accent-light;

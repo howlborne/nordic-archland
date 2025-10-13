@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 
-# Bluetooth menu using bluetoothctl, fzf, and Alacritty
-# Author: Refactored by ChatGPT for terminal-based interaction
-# License: MIT
+# Bluetooth menu using bluetoothctl, fzf, and kitty
 
 # Constants
 BUSY_ICON=''

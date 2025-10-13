@@ -1,8 +1,7 @@
 #!/bin/bash
 
-echo "🛠️ Making AUR Directory"
-mkdir $HOME/AUR
-cd $HOME/AUR
+mkdir -p $HOME/.cache/yay-install
+cd $HOME/.cache/yay-install
 
 git clone https://aur.archlinux.org/yay.git
 cd yay
@@ -21,5 +20,7 @@ for pkg in "${aur_packages[@]}"; do
     yay -S --noconfirm "$pkg"
 done
 
+sleep 2
+
 cd $HOME
-rm -r ./AUR
+rm -rf .cache/yay-install

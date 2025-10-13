@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Wi-Fi Manager using nmcli + fzf
-# Author: You + ChatGPT
+# Author: howlborne + ChatGPT
 # Requirements: nmcli, fzf, notify-send
 # Launch with: kitty -e ~/scripts/wifi_fzf.sh
 

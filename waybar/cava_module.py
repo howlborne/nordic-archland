@@ -1,4 +1,10 @@
 #!/usr/bin/python3
+
+###########################################################################
+##Can't remember official author of the non-modified form of this script.##
+#############The base python script is also provided by cava.##############
+###########################################################################
+
 import os
 import struct
 import subprocess

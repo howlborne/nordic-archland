@@ -1,6 +1,6 @@
 @import "../theme.css";
 
-/* theme switcher */
+/* user */
 
 #custom-user {
 	padding-left: 12px;
@@ -20,7 +20,6 @@
 }
 
 #workspaces {
-/* 	padding: 0 1px; */
 	background-color: @accent-light;
 	text-shadow: 0 0 2px @main-bg;
 }
@@ -29,7 +28,7 @@
 	color: @main-fg;
 }
 
-/* window title & count */
+/* window title */
 
 #window {
 	margin-left: 12px;

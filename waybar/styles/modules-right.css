@@ -1,17 +1,9 @@
 @import "../theme.css";
 
-/* media info */
-
-#mpris {
-	padding: 0 12px;
-	font-weight: bold;
-}
+/* audio visualiser */
 
 #custom-cava {
 	padding-right: 15px;
-/*	background-color: @main-bg;
-	color: @main-fg;*/
-
 	font-weight: bold;
 }
 
@@ -31,7 +23,7 @@
 	text-shadow: 0 0 2px @main-bg;
 }
 
-/* brightness */
+/* brightness (ddcutil) */
 
 #custom-left_div.6 {
 	background-color: @accent-light;
@@ -41,19 +33,6 @@
 	background-color: @main-bg;
 	padding-top: 5px;
 	padding-right: 10px;
-}
-
-/* battery */
-
-#custom-left_div.7 {
-	background-color: @main-bg;
-	color: @accent;
-}
-#battery {
-	background-color: @accent;
-}
-#custom-left_inv.2 {
-	color: @accent;
 }
 
 /* power menu */

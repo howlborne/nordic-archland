@@ -8,7 +8,7 @@ selected=$(echo -e "$list" | rofi -dmenu -i -p "Power Menu")
 
 case "$selected" in
     'Lock') hyprlock ;;  # or swaylock, depending on what you use
-    'Shutdown') systemctl poweroff ;;
+    'Shutdown') systemctl shutdown now ;;
     'Reboot') systemctl reboot ;;
     'Logout') loginctl terminate-session "$XDG_SESSION_ID" ;;
     'Hibernate') systemctl hibernate ;;

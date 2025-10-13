@@ -1,5 +1,7 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
+####### this starship prompt is based on Gruvbox Rainbow, and themed with the nord colour pallete #######
+
 format = """
 [](nord0)\
 $os\

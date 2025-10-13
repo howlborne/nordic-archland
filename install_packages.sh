@@ -78,6 +78,9 @@ packages=(
     xorg-xhost
     timeshift
     eza
+    okular
+    libreoffice-still
+    satty
 )
 
 echo "📦 Installing packages: ${packages[*]}"
