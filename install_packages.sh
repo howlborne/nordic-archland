@@ -81,6 +81,10 @@ packages=(
     okular
     libreoffice-still
     satty
+    hyprshot
+    lib32-mesa
+    xf86-video-amdgpu
+    lib32-vulkan-radeon
 )
 
 echo "📦 Installing packages: ${packages[*]}"

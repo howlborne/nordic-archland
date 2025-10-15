@@ -1,7 +1,7 @@
 #!/bin/bash
 
-mkdir -p $HOME/.cache/yay-install
-cd $HOME/.cache/yay-install
+mkdir -p $HOME/yay-install
+cd $HOME/yay-install
 
 git clone https://aur.archlinux.org/yay.git
 cd yay
@@ -11,7 +11,6 @@ yes | makepkg -sci --noconfirm
 
 aur_packages=(
     brave-bin
-    hyprshot
     localsend-bin
 )
 
@@ -23,4 +22,4 @@ done
 sleep 2
 
 cd $HOME
-rm -rf .cache/yay-install
+rm -rf yay-install

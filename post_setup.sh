@@ -17,7 +17,8 @@ mkdir -p ~/.config/mpv
 ln -sf /usr/lib/mpv-mpris/mpris.so ~/.config/mpv/
 
 # pipewire-jack instead of jack2
-yes | sudo pacman -S pipewire-jack --noconfirm
+sudo pacman -Rns jack2 --noconfirm
+sudo pacman -S pipewire-jack --noconfirm
 
 # grub config
 sudo grub-mkconfig -o /boot/grub/grub.cfg
