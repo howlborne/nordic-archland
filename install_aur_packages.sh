@@ -12,6 +12,7 @@ yes | makepkg -sci --noconfirm
 aur_packages=(
     brave-bin
     localsend-bin
+    anki
 )
 
 for pkg in "${aur_packages[@]}"; do

@@ -13,10 +13,13 @@ sudo ./install_packages.sh
 
 # Copying .config files
 mkdir -p $HOME/.config
-cp -r ./kitty ./btop ./dunst ./fastfetch ./hypr ./waybar ./rofi ./starship ./xdg-desktop-portal $HOME/.config
+cp -r ./kitty ./btop ./dunst ./fastfetch ./hypr ./waybar ./rofi ./starship $HOME/.config
+
+#xdg-desktop-portal config fort all users
+sudo cp -r ./xdg-desktop-portal /etc/xdg/
 
 # for root user
-sudo cp -r ./kitty ./btop ./dunst ./fastfetch ./hypr ./waybar ./rofi ./starship ./xdg-desktop-portal /root/.config
+sudo cp -r ./kitty ./btop ./dunst ./fastfetch ./hypr ./waybar ./rofi ./starship /root/.config
 
 # greetd config file for my user //change for yours//
 sudo cp ./greetd/config.toml /etc/greetd

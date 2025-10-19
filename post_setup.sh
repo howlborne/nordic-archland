@@ -17,8 +17,20 @@ mkdir -p ~/.config/mpv
 ln -sf /usr/lib/mpv-mpris/mpris.so ~/.config/mpv/
 
 # pipewire-jack instead of jack2
-sudo pacman -Rns jack2 --noconfirm
-sudo pacman -S pipewire-jack --noconfirm
+sudo pacman -S pipewire-jack
+
+# hyprpolkitagent build with better UI
+git clone https://github.com/hyprwm/hyprpolkitagent.git
+cp ./hyprpolkitagent-qml/main.qml ./hyprpolkitagent/qml/
+cd hyprpolkitagent
+mkdir build && cd build
+cmake -DCMAKE_BUILD_TYPE=Release ..
+sleep 1
+make
+sleep 1
+sudo make install
+cd ../..
+rm -rf hyprpolkitagent
 
 # grub config
 sudo grub-mkconfig -o /boot/grub/grub.cfg

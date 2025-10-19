@@ -31,7 +31,6 @@ packages=(
     qt6-wayland
     power-profiles-daemon
     libnotify
-    celluloid
     cargo
     ttf-jetbrains-mono
     ttf-0xproto-nerd
@@ -39,7 +38,6 @@ packages=(
     man-db
     man-pages
     texinfo
-    hyprpolkitagent
     gnome-keyring
     libsecret
     qtkeychain-qt6
@@ -69,7 +67,6 @@ packages=(
     dunst
     mpv-mpris
     github-cli
-    pipewire-jack
     uv
     starship
     obs-studio
@@ -79,12 +76,12 @@ packages=(
     timeshift
     eza
     okular
-    libreoffice-still
     satty
     hyprshot
     lib32-mesa
     xf86-video-amdgpu
     lib32-vulkan-radeon
+    cmake
 )
 
 echo "📦 Installing packages: ${packages[*]}"
