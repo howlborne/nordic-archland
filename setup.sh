@@ -72,7 +72,6 @@ sudo modprobe i2c-dev # for ddcutil
 sudo systemctl enable bluetooth.service
 sudo systemctl enable firewalld.service
 sudo systemctl enable greetd.service
-sudo systemctl enable cronie.service
 
 echo "rebooting..."
 sleep 2

@@ -73,7 +73,6 @@ packages=(
     yt-dlp
     kio-admin
     xorg-xhost
-    timeshift
     eza
     okular
     satty
