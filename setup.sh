@@ -65,6 +65,9 @@ echo "alias ls='eza -all'" >> ~/.bashrc
 sudo cp ./broadcom-wl-dkms.conf /etc/modprobe.d
 sudo mkinitcpio -p linux-lts
 
+# QEMU Setup
+./qemu_setup.sh
+
 # Load needed kernel modules
 sudo modprobe i2c-dev # for ddcutil
 

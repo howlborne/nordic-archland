@@ -19,6 +19,9 @@ ln -sf /usr/lib/mpv-mpris/mpris.so ~/.config/mpv/
 # pipewire-jack instead of jack2
 sudo pacman -S pipewire-jack
 
+# QEMU Post Setup
+./qemu_post_setup.sh
+
 # hyprpolkitagent build with better UI
 git clone https://github.com/hyprwm/hyprpolkitagent.git
 cp ./hyprpolkitagent-qml/main.qml ./hyprpolkitagent/qml/
