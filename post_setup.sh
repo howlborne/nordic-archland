@@ -19,6 +19,9 @@ ln -sf /usr/lib/mpv-mpris/mpris.so ~/.config/mpv/
 # pipewire-jack instead of jack2
 sudo pacman -S pipewire-jack
 
+# fixing files opening to Dolphin instead of terminal
+echo 'inode/directory=org.kde.dolphin.desktop' >> ~/.config/mimeapps.list
+
 # QEMU Post Setup
 ./qemu_post_setup.sh
 

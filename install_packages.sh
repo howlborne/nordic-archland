@@ -9,6 +9,8 @@ fi
 # List of packages to install
 packages=(
     linux-lts-headers
+    linux-zen
+    linux-zen-headers
     waybar
     kitty
     dolphin
@@ -81,6 +83,15 @@ packages=(
     xf86-video-amdgpu
     lib32-vulkan-radeon
     cmake
+    usbutils
+    obsidian
+    seahorse
+    lshw
+    kcalc
+    libreoffice-still
+    opencl-mesa
+    rocm-opencl-runtime
+    docker
 )
 
 echo "📦 Installing packages: ${packages[*]}"
