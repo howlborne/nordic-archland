@@ -3,13 +3,13 @@
 xdg-user-dirs-update
 
 # pacman.conf
-sudo ./pacman_conf.sh
+sudo ./scripts/pacman_conf.sh
 
 # Installing needed packages
-sudo ./install_packages.sh
+sudo ./scripts/install_packages.sh
 
 # Installing yay and aur packages
-./install_aur_packages.sh
+./scripts/install_aur_packages.sh
 
 # Copying .config files
 mkdir -p $HOME/.config
@@ -21,7 +21,7 @@ sudo cp -r ./xdg-desktop-portal /etc/xdg/
 # for root user
 sudo cp -r ./kitty ./btop ./dunst ./fastfetch ./hypr ./waybar ./rofi ./starship /root/.config
 
-# greetd config file for my user //change for yours//
+# greetd config file for my user --> howlborne **Note: change for your user**
 sudo cp ./greetd/config.toml /etc/greetd
 
 # Copying wallpapers
@@ -66,7 +66,7 @@ sudo cp ./broadcom-wl-dkms.conf /etc/modprobe.d
 sudo mkinitcpio -p linux-lts
 
 # QEMU Setup
-./qemu_setup.sh
+./scripts/qemu_setup.sh
 
 # Load needed kernel modules
 sudo modprobe i2c-dev # for ddcutil
