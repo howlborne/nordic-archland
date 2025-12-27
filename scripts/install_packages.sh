@@ -9,8 +9,6 @@ fi
 # List of packages to install
 packages=(
     linux-lts-headers
-    linux-zen
-    linux-zen-headers
     waybar
     kitty
     dolphin
@@ -33,7 +31,6 @@ packages=(
     qt6-wayland
     power-profiles-daemon
     libnotify
-    cargo
     ttf-jetbrains-mono
     ttf-0xproto-nerd
     xdg-user-dirs
@@ -66,6 +63,7 @@ packages=(
     hypridle
     cava
     wl-clip-persist
+    satty
     dunst
     mpv-mpris
     github-cli
@@ -77,15 +75,12 @@ packages=(
     xorg-xhost
     eza
     okular
-    satty
     hyprshot
     lib32-mesa
     xf86-video-amdgpu
     lib32-vulkan-radeon
     cmake
     usbutils
-    obsidian
-    seahorse
     lshw
     kcalc
     libreoffice-still
