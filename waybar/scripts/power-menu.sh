@@ -1,16 +1,24 @@
 #!/usr/bin/env bash
 
-list="Lock\nShutdown\nReboot\nLogout\nHibernate\nSuspend"
+options=$(
+cat <<EOF
+󰌾  Lock
+󰐥  Shutdown
+󰜉  Reboot
+󰗼  Logout
+󰒲  Hibernate
+󰤄  Suspend
+EOF
+)
 
-selected=$(echo -e "$list" | rofi -dmenu -i -p "Power Menu")
-
-[[ -z $selected ]] && exit 0
+selected="$(printf '%s\n' "$options" | rofi -dmenu -i -p "Power")"
+[ -z "$selected" ] && exit 0
 
 case "$selected" in
-    'Lock') hyprlock ;;  # or swaylock, depending on what you use
-    'Shutdown') systemctl poweroff ;;
-    'Reboot') systemctl reboot ;;
-    'Logout') loginctl terminate-session "$XDG_SESSION_ID" ;;
-    'Hibernate') systemctl hibernate ;;
-    'Suspend') systemctl suspend ;;
+    *Lock*)        hyprlock ;;
+    *Shutdown*)    systemctl poweroff ;;
+    *Reboot*)      systemctl reboot ;;
+    *Logout*)      loginctl terminate-session "$XDG_SESSION_ID" ;;
+    *Hibernate*)   systemctl hibernate ;;
+    *Suspend*)     systemctl suspend ;;
 esac
