@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo "Building hyprpolkitagent with better UI..."
+
 # hyprpolkitagent build with better UI
 git clone https://github.com/hyprwm/hyprpolkitagent.git
 cp ../hyprpolkitagent-qml/main.qml ./hyprpolkitagent/qml/
@@ -13,4 +15,4 @@ sudo make install
 cd ../..
 rm -rf hyprpolkitagent
 
-
+echo "Done!"

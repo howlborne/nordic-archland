@@ -87,6 +87,7 @@ packages=(
     opencl-mesa
     rocm-opencl-runtime
     docker
+    lm_sensors
 )
 
 echo "📦 Installing packages: ${packages[*]}"

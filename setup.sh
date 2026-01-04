@@ -32,8 +32,9 @@ cp ./Pictures/* $HOME/Pictures/hyprpaper-wallpapers
 sudo mkdir -p /root/Pictures/hyprpaper-wallpapers
 sudo cp ./Pictures/* /root/Pictures/hyprpaper-wallpapers
 
-# Copying cursors
+# Copying cursors and backing up defaults
 sudo cp -r ./Cursors/Nordzy-hyprcursors /usr/share/icons
+sudo mkdir -p /usr/share/icons/cursors-backup/Adwaita; sudo mv /usr/share/icons/breeze_cursors /usr/share/icons/Breeze_Light /usr/share/icons/cursors-backup; sudo mv /usr/share/icons/Adwaita/cursors /usr/share/icons/cursors-backup/Adwaita
 
 # Installing Utterly Nord Color Scheme for KDE Apps
 #Color-Scheme
