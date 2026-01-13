@@ -8,13 +8,17 @@ xdg-user-dirs-update
 # pacman.conf
 sudo ./scripts/pacman_conf.sh
 
+sleep 2
+
 # Installing needed packages
 sudo ./scripts/install_packages.sh
 
-sleep 5
+sleep
 
 # Installing yay and aur packages
 ./scripts/install_aur_packages.sh
+
+sleep 2
 
 # Detect GPU and install necessary packages
 ./scripts/gpu_setup.sh
