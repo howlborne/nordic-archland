@@ -43,14 +43,12 @@ packages=(
     btop
     ddcutil
     kate
-    broadcom-wl-dkms
     dosfstools
     firewalld
-    intel-media-driver
     kde-gtk-config
-    vulkan-intel
     mesa
-    vulkan-radeon
+    lib32-mesa
+    opencl-mesa
     bluez
     bluez-utils
     bluez-deprecated-tools
@@ -76,16 +74,11 @@ packages=(
     eza
     okular
     hyprshot
-    lib32-mesa
-    xf86-video-amdgpu
-    lib32-vulkan-radeon
     cmake
     usbutils
     lshw
     kcalc
     libreoffice-still
-    opencl-mesa
-    rocm-opencl-runtime
     docker
     lm_sensors
     unrar
@@ -106,27 +99,3 @@ for pkg in "${packages[@]}"; do
 done
 
 echo "✔️ All packages processed."
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

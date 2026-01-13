@@ -2,6 +2,9 @@
 
 xdg-user-dirs-update
 
+# Broadcom Inc. and subsidiaries BCM4360 fix
+./scripts/broadcom_bcm4360_fix.sh
+
 # pacman.conf
 sudo ./scripts/pacman_conf.sh
 
@@ -10,6 +13,9 @@ sudo ./scripts/install_packages.sh
 
 # Installing yay and aur packages
 ./scripts/install_aur_packages.sh
+
+# Detect GPU and install necessary packages
+./scripts/gpu_setup.sh
 
 # Copying .config files
 mkdir -p $HOME/.config
@@ -21,7 +27,8 @@ sudo cp -r ./xdg-desktop-portal /etc/xdg/
 # for root user
 #sudo cp -r ./kitty ./btop ./dunst ./fastfetch ./hypr ./waybar ./rofi ./starship /root/.config
 
-# greetd config file for my user --> howlborne **Note: change for your user**
+# greetd config for auto-login to hyprland lockscreen(hyprlock)
+./scripts/greetd_conf_gen.sh
 sudo cp ./greetd/config.toml /etc/greetd
 
 # Copying wallpapers
@@ -61,10 +68,6 @@ echo 'eval "$(starship init bash)"' >> ~/.bashrc
 
 # aliases
 echo "alias ls='eza -all'" >> ~/.bashrc
-
-# Fix for Broadcom Inc. and subsidiaries BCM4360 802.11ac Dual Band Wireless Network Adapter (rev 03)
-sudo cp ./broadcom-wl-dkms.conf /etc/modprobe.d
-sudo mkinitcpio -p linux-lts
 
 # QEMU Setup
 ./scripts/qemu_setup.sh
