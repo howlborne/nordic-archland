@@ -47,7 +47,7 @@ packages=(
     firewalld
     kde-gtk-config
     mesa
-    lib32-mesa
+#    lib32-mesa
     opencl-mesa
     bluez
     bluez-utils

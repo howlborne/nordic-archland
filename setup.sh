@@ -11,6 +11,8 @@ sudo ./scripts/pacman_conf.sh
 # Installing needed packages
 sudo ./scripts/install_packages.sh
 
+sleep 5
+
 # Installing yay and aur packages
 ./scripts/install_aur_packages.sh
 

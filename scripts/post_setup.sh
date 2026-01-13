@@ -20,7 +20,7 @@ ln -sf /usr/lib/mpv-mpris/mpris.so ~/.config/mpv/
 sudo pacman -S pipewire-jack
 
 # fixing files opening to Dolphin instead of terminal
-echo 'inode/directory=org.kde.dolphin.desktop' >> ~/.config/mimeapps.list
+./default_mimeapps.sh
 
 # hiding unneeded applications from rofi drun...
 sudo ./hide_unneeded_rofi_drun_apps.sh
