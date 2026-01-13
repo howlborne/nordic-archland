@@ -4,6 +4,7 @@ xdg-user-dirs-update
 
 # Broadcom Inc. and subsidiaries BCM4360 fix
 ./scripts/broadcom_bcm4360_fix.sh
+sleep 2
 
 # pacman.conf
 sudo ./scripts/pacman_conf.sh
@@ -13,7 +14,7 @@ sleep 2
 # Installing needed packages
 sudo ./scripts/install_packages.sh
 
-sleep
+sleep 5
 
 # Installing yay and aur packages
 ./scripts/install_aur_packages.sh
@@ -22,6 +23,7 @@ sleep 2
 
 # Detect GPU and install necessary packages
 ./scripts/gpu_setup.sh
+sleep 2
 
 # Copying .config files
 mkdir -p $HOME/.config
@@ -56,12 +58,9 @@ sudo cp ./Themes/plasma-themes/Utterly-Nord-Plasma/UtterlyNord.colors /usr/share
 # Nordzy-dark icons
 sudo cp -r ./Icons/Nordzy-dark /usr/share/icons
 
-# Applying Nordic theme for GTK3/4
+# Copying Nordic theme for GTK3/4
 sudo cp -r ./Themes/gtk-themes/Nordic-bluish-accent ./Themes/gtk-themes/Nordic-bluish-accent-v40 /usr/share/themes
-mkdir -p $HOME/.config/gtk-3.0
-mkdir -p $HOME/.config/gtk-4.0
-cp ./Themes/gtk-themes/gtk-3.0/settings.ini $HOME/.config/gtk-3.0
-cp ./Themes/gtk-themes/gtk-4.0/settings.ini $HOME/.config/gtk-4.0
+./scripts/kde_gtk_nordic_config.sh
 # for root user
 #sudo mkdir -p /root/.config/gtk-3.0
 #sudo mkdir -p /root/.config/gtk-4.0

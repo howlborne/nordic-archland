@@ -9,6 +9,8 @@ cd yay
 echo "⬇️ Installing Yay"
 yes | makepkg -sci --noconfirm
 
+sleep 2
+
 aur_packages=(
     brave-bin
     localsend-bin
@@ -17,6 +19,7 @@ aur_packages=(
 for pkg in "${aur_packages[@]}"; do
     echo "⬇️ Installing $pkg..."
     yay -S --noconfirm "$pkg"
+    sleep 2
 done
 
 sleep 2
