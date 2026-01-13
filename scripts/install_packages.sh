@@ -88,6 +88,7 @@ packages=(
     rocm-opencl-runtime
     docker
     lm_sensors
+    unrar
 )
 
 echo "📦 Installing packages: ${packages[*]}"

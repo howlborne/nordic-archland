@@ -19,7 +19,7 @@ cp -r ./kitty ./btop ./dunst ./fastfetch ./hypr ./waybar ./rofi ./starship $HOME
 sudo cp -r ./xdg-desktop-portal /etc/xdg/
 
 # for root user
-sudo cp -r ./kitty ./btop ./dunst ./fastfetch ./hypr ./waybar ./rofi ./starship /root/.config
+#sudo cp -r ./kitty ./btop ./dunst ./fastfetch ./hypr ./waybar ./rofi ./starship /root/.config
 
 # greetd config file for my user --> howlborne **Note: change for your user**
 sudo cp ./greetd/config.toml /etc/greetd
@@ -29,8 +29,8 @@ mkdir -p $HOME/Pictures/hyprpaper-wallpapers
 cp ./Pictures/* $HOME/Pictures/hyprpaper-wallpapers
 
 # Copying wallpapers for root user
-sudo mkdir -p /root/Pictures/hyprpaper-wallpapers
-sudo cp ./Pictures/* /root/Pictures/hyprpaper-wallpapers
+#sudo mkdir -p /root/Pictures/hyprpaper-wallpapers
+#sudo cp ./Pictures/* /root/Pictures/hyprpaper-wallpapers
 
 # Copying cursors and backing up defaults
 sudo cp -r ./Cursors/Nordzy-hyprcursors /usr/share/icons
@@ -50,10 +50,10 @@ mkdir -p $HOME/.config/gtk-4.0
 cp ./Themes/gtk-themes/gtk-3.0/settings.ini $HOME/.config/gtk-3.0
 cp ./Themes/gtk-themes/gtk-4.0/settings.ini $HOME/.config/gtk-4.0
 # for root user
-sudo mkdir -p /root/.config/gtk-3.0
-sudo mkdir -p /root/.config/gtk-4.0
-sudo cp ./Themes/gtk-themes/gtk-3.0/settings.ini /root/.config/gtk-3.0
-sudo cp ./Themes/gtk-themes/gtk-4.0/settings.ini /root/.config/gtk-4.0
+#sudo mkdir -p /root/.config/gtk-3.0
+#sudo mkdir -p /root/.config/gtk-4.0
+#sudo cp ./Themes/gtk-themes/gtk-3.0/settings.ini /root/.config/gtk-3.0
+#sudo cp ./Themes/gtk-themes/gtk-4.0/settings.ini /root/.config/gtk-4.0
 
 # starship & fastfetch >> .bashrc
 echo 'fastfetch --config $HOME/.config/kitty/fastfetch/config.jsonc' >> ~/.bashrc

@@ -4,7 +4,7 @@
 ./kde_globals.sh
 
 # adding some kde globals for root user
-sudo ./kde_globals_root.sh
+#sudo ./kde_globals_root.sh
 
 # enabling bluetooth autoconnect
 sudo ./bluetooth_autoconnect.sh
