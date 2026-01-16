@@ -23,6 +23,7 @@ packages=(
     pipewire-pulse
     pamixer
     hyprpaper
+    hyprpolkitagent
     xdg-desktop-portal-hyprland
     xdg-desktop-portal-gtk
     xdg-desktop-portal-kde
