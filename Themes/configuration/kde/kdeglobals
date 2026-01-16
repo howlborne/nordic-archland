@@ -106,6 +106,13 @@ ForegroundVisited=143,188,187
 
 [General]
 ColorScheme=UtterlyNord
+XftHintStyle=hintslight
+XftSubPixel=none
+accentColorFromWallpaper=true
+font=JetBrains Mono,10,-1,5,600,0,0,0,0,0,0,0,0,0,0,1,SemiBold
+menuFont=JetBrains Mono,10,-1,5,600,0,0,0,0,0,0,0,0,0,0,1,SemiBold
+smallestReadableFont=JetBrains Mono,8,-1,5,600,0,0,0,0,0,0,0,0,0,0,1,SemiBold
+toolBarFont=JetBrains Mono,10,-1,5,600,0,0,0,0,0,0,0,0,0,0,1,SemiBold
 
 [Icons]
 Theme=Nordzy-dark

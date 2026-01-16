@@ -41,3 +41,9 @@ EOF
 chmod +x "$OUT"
 
 echo "Script generated at: $OUT (BUS=$BUS)"
+
+sed -i "/XF86AudioMicMute/a\
+bindel = ,XF86MonBrightnessUp, exec, ddcutil --bus=${BUS} setvcp 0x10 + 5; pkill -RTMIN+18 waybar\n\
+bindel = ,XF86MonBrightnessDown, exec, ddcutil --bus=${BUS} setvcp 0x10 - 5; pkill -RTMIN+18 waybar" \
+~/.config/hypr/keybinds.conf
+
