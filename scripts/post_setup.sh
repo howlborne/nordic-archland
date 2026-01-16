@@ -16,6 +16,9 @@ sudo ./default_apps_fix.sh
 mkdir -p ~/.config/mpv
 ln -sf /usr/lib/mpv-mpris/mpris.so ~/.config/mpv/
 
+# setting ddcutil monitor bus and generating script for waybar
+./gen_ddcutil_bus_brightness.sh
+
 # pipewire-jack instead of jack2
 sudo pacman -S pipewire-jack
 
