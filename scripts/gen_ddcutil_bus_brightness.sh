@@ -41,6 +41,8 @@ EOF
 
 chmod +x "$OUT_0"
 
+mkdir -p $HOME/.config/hypr/hypridle/ddcutil
+
 cat > "$OUT_1" <<EOF
 general {
     lock_cmd = pidof hyprlock || hyprlock       # avoid starting multiple hyprlock instances.
@@ -50,62 +52,62 @@ general {
 
 listener {
     timeout = 120
-    on-timeout = ddcutil --bus=$BUS setvcp 0x10 - 10; pkill -RTMIN+18 waybar         # set monitor backlight to (current - 10).
-    on-resume = ddcutil --bus=$BUS setvcp 0x10 100; pkill -RTMIN+18 waybar         # restore monitor backlight..
+    on-timeout = ddcutil --bus=$BUS getvcp 0x10 2>/dev/null | grep -oP 'current value =\s*\K\d+' > \$HOME/.config/hypr/hypridle/ddcutil/getvcp; ddcutil --bus=$BUS setvcp 0x10 - 10; pkill -RTMIN+18 waybar         # set monitor backlight to (current - 10).
+    on-resume = ddc_value=\$(< $HOME/.config/hypr/hypridle/ddcutil/getvcp); ddcutil --bus=$BUS setvcp 0x10 \$ddc_value; pkill -RTMIN+18 waybar         # restore monitor backlight..
 }
 
 listener {
     timeout = 180
     on-timeout = ddcutil --bus=$BUS setvcp 0x10 - 10; pkill -RTMIN+18 waybar
-    on-resume = ddcutil --bus=$BUS setvcp 0x10 100; pkill -RTMIN+18 waybar
+    on-resume = ddc_value=\$(< $HOME/.config/hypr/hypridle/ddcutil/getvcp); ddcutil --bus=$BUS setvcp 0x10 \$ddc_value; pkill -RTMIN+18 waybar
 }
 
 listener {
     timeout = 240
     on-timeout = ddcutil --bus=$BUS setvcp 0x10 - 10; pkill -RTMIN+18 waybar
-    on-resume = ddcutil --bus=$BUS setvcp 0x10 100; pkill -RTMIN+18 waybar
+    on-resume = ddc_value=\$(< $HOME/.config/hypr/hypridle/ddcutil/getvcp); ddcutil --bus=$BUS setvcp 0x10 \$ddc_value; pkill -RTMIN+18 waybar
 }
 
 listener {
     timeout = 300
     on-timeout = ddcutil --bus=$BUS setvcp 0x10 - 10; pkill -RTMIN+18 waybar
-    on-resume = ddcutil --bus=$BUS setvcp 0x10 100; pkill -RTMIN+18 waybar
+    on-resume = ddc_value=\$(< $HOME/.config/hypr/hypridle/ddcutil/getvcp); ddcutil --bus=$BUS setvcp 0x10 \$ddc_value; pkill -RTMIN+18 waybar
 }
 
 listener {
     timeout = 360
     on-timeout = ddcutil --bus=$BUS setvcp 0x10 - 10; pkill -RTMIN+18 waybar
-    on-resume = ddcutil --bus=$BUS setvcp 0x10 100; pkill -RTMIN+18 waybar
+    on-resume = ddc_value=\$(< $HOME/.config/hypr/hypridle/ddcutil/getvcp); ddcutil --bus=$BUS setvcp 0x10 \$ddc_value; pkill -RTMIN+18 waybar
 }
 
 listener {
     timeout = 420
     on-timeout = ddcutil --bus=$BUS setvcp 0x10 - 10; pkill -RTMIN+18 waybar
-    on-resume = ddcutil --bus=$BUS setvcp 0x10 100; pkill -RTMIN+18 waybar
+    on-resume = ddc_value=\$(< $HOME/.config/hypr/hypridle/ddcutil/getvcp); ddcutil --bus=$BUS setvcp 0x10 \$ddc_value; pkill -RTMIN+18 waybar
 }
 
 listener {
     timeout = 480
     on-timeout = ddcutil --bus=$BUS setvcp 0x10 - 10; pkill -RTMIN+18 waybar
-    on-resume = ddcutil --bus=$BUS setvcp 0x10 100; pkill -RTMIN+18 waybar
+    on-resume = ddc_value=\$(< $HOME/.config/hypr/hypridle/ddcutil/getvcp); ddcutil --bus=$BUS setvcp 0x10 \$ddc_value; pkill -RTMIN+18 waybar
 }
 
 listener {
     timeout = 540
     on-timeout = ddcutil --bus=$BUS setvcp 0x10 - 10; pkill -RTMIN+18 waybar
-    on-resume = ddcutil --bus=$BUS setvcp 0x10 100; pkill -RTMIN+18 waybar
+    on-resume = ddc_value=\$(< $HOME/.config/hypr/hypridle/ddcutil/getvcp); ddcutil --bus=$BUS setvcp 0x10 \$ddc_value; pkill -RTMIN+18 waybar
 }
 
 listener {
     timeout = 600
     on-timeout = ddcutil --bus=$BUS setvcp 0x10 - 10; pkill -RTMIN+18 waybar
-    on-resume = ddcutil --bus=$BUS setvcp 0x10 100; pkill -RTMIN+18 waybar
+    on-resume = ddc_value=\$(< $HOME/.config/hypr/hypridle/ddcutil/getvcp); ddcutil --bus=$BUS setvcp 0x10 \$ddc_value; pkill -RTMIN+18 waybar
 }
 
 listener {
     timeout = 660
     on-timeout = ddcutil --bus=$BUS setvcp 0x10 - 10; pkill -RTMIN+18 waybar
-    on-resume = ddcutil --bus=$BUS setvcp 0x10 100; pkill -RTMIN+18 waybar
+    on-resume = ddc_value=\$(< $HOME/.config/hypr/hypridle/ddcutil/getvcp); ddcutil --bus=$BUS setvcp 0x10 \$ddc_value; pkill -RTMIN+18 waybar
 }
 
 # turn off keyboard backlight, comment out this section if you dont have a keyboard backlight.
