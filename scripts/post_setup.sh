@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# time sync
+sudo timedatectl set-ntp true
+
 # adding some kde globals
 ./kde_globals.sh
 

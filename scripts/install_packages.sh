@@ -38,7 +38,6 @@ packages=(
     man-db
     man-pages
     texinfo
-    gnome-keyring
     libsecret
     qtkeychain-qt6
     btop
@@ -83,6 +82,11 @@ packages=(
     docker
     lm_sensors
     unrar
+    exfat-utils
+    kwallet
+    kwalletmanager
+    kwallet-pam
+    ksshaskpass
 )
 
 echo "📦 Installing packages: ${packages[*]}"
