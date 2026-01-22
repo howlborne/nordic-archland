@@ -1,0 +1,59 @@
+[General]
+Description=Golden Harvest
+Opacity=1
+Wallpaper=
+Blur=false
+
+[Background]
+Color=64,53,42
+
+[Foreground]
+Color=243,244,238
+
+[Color0]   # Black (Soil Shadow)
+Color=64,53,42
+
+[Color1]   # Red (Error)
+Color=191,97,106
+
+[Color2]   # Green (Positive)
+Color=163,190,140
+
+[Color3]   # Yellow (Harvest Gold)
+Color=235,203,139
+
+[Color4]   # Blue (Link)
+Color=129,161,193
+
+[Color5]   # Magenta (Warm Accent)
+Color=172,142,113
+
+[Color6]   # Cyan (Visited / Teal)
+Color=143,188,187
+
+[Color7]   # White (Wheat)
+Color=232,233,228
+
+[Color8]   # Bright Black (Disabled)
+Color=112,111,110
+
+[Color9]   # Bright Red
+Color=127,65,79
+
+[Color10]  # Bright Green
+Color=195,239,185
+
+[Color11]  # Bright Yellow
+Color=255,220,151
+
+[Color12]  # Bright Blue
+Color=170,213,255
+
+[Color13]  # Bright Magenta
+Color=219,184,148
+
+[Color14]  # Bright Cyan
+Color=192,255,250
+
+[Color15]  # Bright White
+Color=254,255,249
