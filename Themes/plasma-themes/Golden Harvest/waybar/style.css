@@ -13,14 +13,14 @@
 /* main outline */
 
 window#waybar {
-	background-color: rgba(64,53,42,0.88);		/*shade(@main-bg, 0.88) conversion to rgba for better opacity handling*/
+	background-color: rgba(64,53,42,0.97);		/*shade(@main-bg, 0.88) conversion to rgba for better opacity handling*/
 }
 
 /* main background */
 
 window#waybar > box {
 	margin: 3px;
-	background-color: rgba(64,53,42,0.0);		/*@main-bg conversion to rgba for better opacity handling*/
+	background-color: rgba(64,53,42,0);		/*@main-bg conversion to rgba for better opacity handling*/
 }
 
 /* hoverables */

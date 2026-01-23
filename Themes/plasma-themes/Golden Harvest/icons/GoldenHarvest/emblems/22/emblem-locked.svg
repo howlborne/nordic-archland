@@ -1,0 +1,11 @@
+<svg width="22" height="22" version="1.1" xmlns="http://www.w3.org/2000/svg">
+ <style type="text/css">.ColorScheme-NeutralText {
+            color:#7e6852;
+        }
+        .ColorScheme-Text {
+            color:#080605;
+        }</style>
+ <rect transform="matrix(0,-1,-1,0,0,0)" x="-18.989" y="-18.999" width="15.998" height="15.998" rx="8.001" ry="8.001" fill="#8e755d" stroke-width="3.7794"/>
+ <path d="m6.9994 9.9936h8.001v5.0001h-8.001z" fill="#e6dfd9" stroke-width="3.7794"/>
+ <rect x="8.4999" y="6.4787" width="5.0001" height="6.9994" ry="2.4982" fill="none" stroke="#e6dfd9" stroke-linejoin="round" stroke-width="1.0015"/>
+</svg>

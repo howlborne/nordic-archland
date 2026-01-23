@@ -30,12 +30,12 @@
 @define-color main-br        #f3f4ee;  /* border */
 @define-color main-bg        #40352a;  /* background */
 @define-color main-fg        #f3f4ee;  /* foreground */
-@define-color accent         #6a5845;  /* accent / panel highlights */
+@define-color accent         #584939;  /* accent / panel highlights */
 @define-color accent-distro  #7c6b57;  /* distro color or subtle accents */
 @define-color hover-bg       #40352a;  /* hover background same as main-bg */
 @define-color hover-fg       alpha(#f3f4ee, 0.75);  /* slightly dimmed fg */
 @define-color outline        shade(#40352a, 0.88);  /* subtle outline */
-@define-color accent-light   #ac8e71;  /* light accent */
+@define-color accent-light   #8b725c;  /* light accent */
 
 /* State colors */
 @define-color warning        #ebcb8b;  /* golden yellow */
