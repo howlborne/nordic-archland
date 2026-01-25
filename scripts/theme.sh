@@ -10,6 +10,10 @@ mkdir -p $HOME/.config/gtk-4.0
 # Nordveil & Golden Harvest
 cp -r ./global-themes/* $THEMES
 
+# theme switching scripts
+cp ./scripts/golden_harvest.sh ./scripts/nordveil.sh $THEMES/scripts/
+sudo cp ./scripts/theme_switcher.sh /usr/local/bin
+
 # Icons
 sudo cp -r $THEMES/nordveil/Icons/* $THEMES/golden-harvest/Icons/* /usr/share/icons/
 
