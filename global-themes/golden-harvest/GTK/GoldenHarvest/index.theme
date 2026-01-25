@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=GoldenHarvest
+Comment=A variant of Nordveil created by nicklasvraa/color-manager
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+GtkTheme=GoldenHarvest
+MetacityTheme=GoldenHarvest
+IconTheme=GoldenHarvest
+ButtonLayout=:minimize,maximize,close
