@@ -31,7 +31,7 @@ read -p $'Which theme do you want to set by default?\n(1)Nordveil    (Default)\n
 
 if [[ "$SELECTED" -eq 2 ]]; then
     echo "Installing Golden Harvest..."
-    echo "Golden Harvest" > /tmp/archland_default
+    echo "Golden Harvest" > $THEMES/archland_default
 
     # symlink .config dirs
     for dir in $THEMES/golden-harvest/.config/*/; do
@@ -63,7 +63,7 @@ if [[ "$SELECTED" -eq 2 ]]; then
     gsettings set org.gnome.desktop.interface gtk-theme 'GoldenHarvest-v40'
 else
     echo "Installing Nordveil..."
-    echo "Nordveil" > /tmp/archland_default
+    echo "Nordveil" > $THEMES/archland_default
 
     # symlink .config dirs
     for dir in $THEMES/nordveil/.config/*/; do

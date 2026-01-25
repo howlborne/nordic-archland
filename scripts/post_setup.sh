@@ -1,11 +1,12 @@
 #!/usr/bin/env bash
 
 # apply KDE default theme
-if [[ "$(cat /tmp/archland_default)" == "Golden Harvest" ]]; then
+if [[ "$(cat $HOME/.local/share/archland/global-themes/archland_default)" == "Golden Harvest" ]]; then
     plasma-apply-colorscheme GoldenHarvest
 else
     plasma-apply-colorscheme Nordveil
 fi
+rm $HOME/.local/share/archland/global-themes/archland_default
 
 # time sync
 sudo timedatectl set-ntp true
