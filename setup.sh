@@ -1,71 +1,39 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
+# update user home dirs
 xdg-user-dirs-update
 
-# Broadcom Inc. and subsidiaries BCM4360 fix
+# fix Broadcom Inc. and subsidiaries BCM4360
 ./scripts/broadcom_bcm4360_fix.sh
 sleep 2
 
-# pacman.conf
+# pacman configuration
 sudo ./scripts/pacman_conf.sh
-
 sleep 2
 
-# Installing needed packages
+# installing needed packages
 sudo ./scripts/install_packages.sh
-
-sleep 5
-
-# Installing yay and aur packages
-./scripts/install_aur_packages.sh
-
 sleep 2
 
-# Detect GPU and install necessary packages
+# installing custom,yay and aur packages
+./scripts/install_aur_packages.sh
+sleep 2
+
+# select default theme
+./scripts/theme.sh
+sleep 2
+
+# detect GPU and install necessary packages
 ./scripts/gpu_setup.sh
 sleep 2
 
-# Copying .config files
-mkdir -p $HOME/.config
-cp -r ./kitty ./btop ./dunst ./fastfetch ./hypr ./waybar ./rofi ./starship $HOME/.config
+# xdg-desktop-portal config
+sudo mkdir -p /etc/xdg/xdg-desktop-portal
+sudo bash -c 'echo -e "[preferred]\ndefault = hyprland;kde;gtk\norg.freedesktop.impl.portal.FileChooser=kde" > /etc/xdg/xdg-desktop-portal/portals.conf'
 
-#xdg-desktop-portal config fort all users
-sudo cp -r ./xdg-desktop-portal /etc/xdg/
-
-# for root user
-#sudo cp -r ./kitty ./btop ./dunst ./fastfetch ./hypr ./waybar ./rofi ./starship /root/.config
-
-# greetd config for auto-login to hyprland lockscreen(hyprlock)
-./scripts/greetd_conf_gen.sh
+# greetd auto-login config --> hyprlock
+envsubst < greetd/config.toml.in > greetd/config.toml
 sudo cp ./greetd/config.toml /etc/greetd
-
-# Copying wallpapers
-mkdir -p $HOME/Pictures/hyprpaper-wallpapers
-cp ./Pictures/* $HOME/Pictures/hyprpaper-wallpapers
-
-# Copying wallpapers for root user
-#sudo mkdir -p /root/Pictures/hyprpaper-wallpapers
-#sudo cp ./Pictures/* /root/Pictures/hyprpaper-wallpapers
-
-# Copying cursors and backing up defaults
-sudo cp -r ./Cursors/Nordzy-hyprcursors /usr/share/icons
-sudo mkdir -p /usr/share/icons/cursors-backup/Adwaita; sudo mv /usr/share/icons/breeze_cursors /usr/share/icons/Breeze_Light /usr/share/icons/cursors-backup; sudo mv /usr/share/icons/Adwaita/cursors /usr/share/icons/cursors-backup/Adwaita
-
-# Installing Utterly Nord Color Scheme for KDE Apps
-#Color-Scheme
-sudo cp ./Themes/plasma-themes/Utterly-Nord-Plasma/UtterlyNord.colors /usr/share/color-schemes
-
-# Nordzy-dark icons
-sudo cp -r ./Icons/Nordzy-dark /usr/share/icons
-
-# Copying Nordic theme for GTK3/4
-sudo cp -r ./Themes/gtk-themes/Nordic-bluish-accent ./Themes/gtk-themes/Nordic-bluish-accent-v40 /usr/share/themes
-./scripts/kde_gtk_nordic_config.sh
-# for root user
-#sudo mkdir -p /root/.config/gtk-3.0
-#sudo mkdir -p /root/.config/gtk-4.0
-#sudo cp ./Themes/gtk-themes/gtk-3.0/settings.ini /root/.config/gtk-3.0
-#sudo cp ./Themes/gtk-themes/gtk-4.0/settings.ini /root/.config/gtk-4.0
 
 # starship & fastfetch >> .bashrc
 echo 'fastfetch --config $HOME/.config/kitty/fastfetch/config.jsonc' >> ~/.bashrc
@@ -77,10 +45,10 @@ echo "alias ls='eza -all'" >> ~/.bashrc
 # QEMU Setup
 ./scripts/qemu_setup.sh
 
-# Load needed kernel modules
+# load needed kernel modules
 sudo modprobe i2c-dev # for ddcutil
 
-# Enable systemd services
+# enable systemd services
 sudo systemctl enable bluetooth.service
 sudo systemctl enable firewalld.service
 sudo systemctl enable greetd.service

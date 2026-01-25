@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-OUT_0="$HOME/.config/waybar/scripts/brightness.sh"
-OUT_1="$HOME/.config/hypr/hypridle_ddcutil.sh"
+THEMES=$HOME/.local/share/archland/global-themes
+
+OUT_0="/tmp/brightness.sh"
+OUT_1="/tmp/hypridle_ddcutil.sh"
 
 BUS=$(ddcutil detect | grep -o 'i2c-[0-9]*' | cut -d- -f2 | head -n1)
 
@@ -41,7 +43,8 @@ EOF
 
 chmod +x "$OUT_0"
 
-mkdir -p $HOME/.config/hypr/hypridle/ddcutil
+cp /tmp/brightness.sh $THEMES/golden-harvest/.config/waybar/scripts/
+cp /tmp/brightness.sh $THEMES/nordveil/.config/waybar/scripts/
 
 cat > "$OUT_1" <<EOF
 #!/usr/bin/env bash
@@ -69,12 +72,21 @@ esac
 EOF
 
 chmod +x "$OUT_1"
-sudo mv $HOME/.config/hypr/hypridle_ddcutil.sh /usr/local/bin
+sudo mv /tmp/hypridle_ddcutil.sh /usr/local/bin
 
 echo "Script generated at: $OUT_0 (BUS=$BUS)"
 
-sed -i "/XF86AudioMicMute/a\
+if ! grep -q "XF86MonBrightnessUp, exec, ddcutil" "$THEMES/nordveil/.config/hypr/keybinds.conf"; then
+    sed -i "/XF86AudioMicMute/a\
 bindel = ,XF86MonBrightnessUp, exec, ddcutil --bus=${BUS} setvcp 0x10 + 5; pkill -RTMIN+18 waybar\n\
 bindel = ,XF86MonBrightnessDown, exec, ddcutil --bus=${BUS} setvcp 0x10 - 5; pkill -RTMIN+18 waybar" \
-~/.config/hypr/keybinds.conf
+"$THEMES/nordveil/.config/hypr/keybinds.conf"
+fi
+
+if ! grep -q "XF86MonBrightnessUp, exec, ddcutil" "$THEMES/golden-harvest/.config/hypr/keybinds.conf"; then
+    sed -i "/XF86AudioMicMute/a\
+bindel = ,XF86MonBrightnessUp, exec, ddcutil --bus=${BUS} setvcp 0x10 + 5; pkill -RTMIN+18 waybar\n\
+bindel = ,XF86MonBrightnessDown, exec, ddcutil --bus=${BUS} setvcp 0x10 - 5; pkill -RTMIN+18 waybar" \
+"$THEMES/golden-harvest/.config/hypr/keybinds.conf"
+fi
 

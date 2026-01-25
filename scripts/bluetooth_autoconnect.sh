@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 BT_MAIN="/etc/bluetooth/main.conf"
 BACKUP="$BT_MAIN.backup.$(date +%Y%m%d_%H%M%S)"
@@ -16,7 +16,7 @@ if ! grep -q "^AutoConnect=true" "$BT_MAIN"; then
 fi
 
 if ! grep -q "^AutoEnable=true" "$BT_MAIN"; then
-    # Use sed to insert after [General] section
+    # Use sed to insert after [Policy] section
     sed -i '/^\[Policy\]/{
         a AutoEnable=true
     }' "$BT_MAIN"

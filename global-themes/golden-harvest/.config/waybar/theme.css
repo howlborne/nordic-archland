@@ -1,0 +1,41 @@
+/* Golden Harvest Waybar Theme */
+
+/*Warm palette*/
+
+/* Base tones */
+@define-color gh0        #40352a;  /* main background dark */
+@define-color gh1        #584939;
+@define-color gh2        #6a5845;
+@define-color gh3        #79644f;
+
+/* Light tones */
+@define-color gh4        #f3f4ee;  /* main foreground */
+@define-color gh5        #f4eedf;
+@define-color gh6        #fefff9;
+
+/* Accent tones */
+@define-color gh7        #ac8e71;
+@define-color gh8        #d6c09a;
+
+/* Aurora tones (optional highlights) */
+@define-color gh11       #bf616a;  /* red */
+@define-color gh12       #d08770;  /* orange */
+@define-color gh13       #ebcb8b;  /* yellow */
+@define-color gh14       #a3be8c;  /* green */
+@define-color gh15       #b48ead;  /* purple */
+
+/* Main colors */
+@define-color main-br        #f3f4ee;  /* border */
+@define-color main-bg        #40352a;  /* background */
+@define-color main-fg        #f3f4ee;  /* foreground */
+@define-color accent         #584939;  /* accent / panel highlights */
+@define-color accent-distro  #79644f;  /* distro color or subtle accents */
+@define-color hover-bg       #40352a;  /* hover background same as main-bg */
+@define-color hover-fg       alpha(#f3f4ee, 0.75);  /* slightly dimmed fg */
+@define-color outline        shade(#40352a, 0.88);  /* subtle outline */
+@define-color accent-light   #8b725c;  /* light accent */
+
+/* State colors */
+@define-color warning        #ebcb8b;  /* golden yellow */
+@define-color critical       #bf616a;  /* red */
+@define-color charging       #a3be8c;  /* green */

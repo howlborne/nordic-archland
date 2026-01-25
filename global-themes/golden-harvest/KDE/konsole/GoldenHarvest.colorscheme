@@ -1,0 +1,64 @@
+[General]
+Description=Golden Harvest
+Opacity=1
+Wallpaper=
+Blur=false
+
+[Background]
+Color=64,53,42
+
+[Foreground]
+Color=243,244,238
+
+
+# ANSI colors
+[Color0]   # Black
+Color=59,66,82
+
+[Color1]   # Red
+Color=191,97,106
+
+[Color2]   # Green
+Color=163,190,140
+
+[Color3]   # Yellow
+Color=235,203,139
+
+[Color4]   # Blue
+Color=129,161,193
+
+[Color5]   # Magenta
+Color=180,142,173
+
+[Color6]   # Cyan
+Color=143,188,187
+
+[Color7]   # White
+Color=232,233,228
+
+
+# Bright ANSI colors
+[Color8]   # Bright Black
+Color=76,85,106
+
+[Color9]   # Bright Red
+Color=209,105,118
+
+[Color10]  # Bright Green
+Color=180,209,143
+
+[Color11]  # Bright Yellow
+Color=240,209,147
+
+[Color12]  # Bright Blue
+Color=144,179,217
+
+[Color13]  # Bright Magenta
+Color=198,155,192
+
+[Color14]  # Bright Cyan
+Color=159,209,211
+
+[Color15]  # Bright White
+Color=244,238,223
+

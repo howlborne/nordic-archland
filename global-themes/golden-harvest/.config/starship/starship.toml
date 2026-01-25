@@ -1,0 +1,168 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+####### Golden Harvest / Gruvbox Rainbow #######
+## color palette created by howlborne, inspired by nord palette ##
+
+format = """
+[](gh0)\
+$os\
+$username\
+[](bg:gh9 fg:gh0)\
+$directory\
+[](fg:gh9 bg:gh7)\
+$git_branch\
+$git_status\
+[](fg:gh7 bg:gh8)\
+$c\
+$rust\
+$golang\
+$nodejs\
+$php\
+$java\
+$kotlin\
+$haskell\
+$python\
+[](fg:gh8 bg:gh10)\
+$docker_context\
+[](fg:gh10 bg:gh2)\
+$time\
+[ ](fg:gh2)\
+$line_break$character"""
+
+palette = 'golden_harvest'
+
+# ================= PALETTE =================
+[palettes.golden_harvest]
+gh0  = "#40352a" # base background
+gh1  = "#6a5845" # dark surface
+gh2  = "#79644f" # muted surface
+gh3  = "#8b725c"
+gh4  = "#f4eedf" # primary fg
+gh5  = "#e8e9e4"
+gh6  = "#fefff9"
+gh7  = "#8fbcbb" # cyan
+gh8  = "#ebcb8b" # warm yellow
+gh9  = "#ac8e71" # gold accent
+gh10 = "#81a1c1" # nord blue
+
+# ================= MODULES =================
+[os]
+disabled = false
+style = "bg:gh0 fg:gh4"
+
+[os.symbols]
+Windows = "󰍲"
+Ubuntu = "󰕈"
+SUSE = ""
+Raspbian = "󰐿"
+Mint = "󰣭"
+Macos = ""
+Manjaro = ""
+Linux = "󰌽"
+Gentoo = "󰣨"
+Fedora = "󰣛"
+Alpine = ""
+Amazon = ""
+Android = ""
+Arch = "󰣇"
+Artix = "󰣇"
+CentOS = ""
+Debian = "󰣚"
+Redhat = "󱄛"
+RedHatEnterprise = "󱄛"
+
+[username]
+show_always = true
+style_user = "bg:gh0 fg:gh4"
+style_root = "bg:gh0 fg:gh4"
+format = '[ $user ]($style)'
+
+[directory]
+style = "fg:gh0 bg:gh9"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = "󰝚 "
+"Pictures" = " "
+"Developer" = "󰲋 "
+
+[git_branch]
+symbol = ""
+style = "bg:gh7"
+format = '[[ $symbol $branch ](fg:gh0 bg:gh7)]($style)'
+
+[git_status]
+style = "bg:gh7"
+format = '[[($all_status$ahead_behind )](fg:gh0 bg:gh7)]($style)'
+
+# ===== LANGUAGES =====
+[nodejs]
+symbol = ""
+style = "bg:gh8"
+format = '[[ $symbol( $version) ](fg:gh0 bg:gh8)]($style)'
+
+[c]
+symbol = " "
+style = "bg:gh8"
+format = '[[ $symbol( $version) ](fg:gh0 bg:gh8)]($style)'
+
+[rust]
+symbol = ""
+style = "bg:gh8"
+format = '[[ $symbol( $version) ](fg:gh0 bg:gh8)]($style)'
+
+[golang]
+symbol = ""
+style = "bg:gh8"
+format = '[[ $symbol( $version) ](fg:gh0 bg:gh8)]($style)'
+
+[php]
+symbol = ""
+style = "bg:gh8"
+format = '[[ $symbol( $version) ](fg:gh0 bg:gh8)]($style)'
+
+[java]
+symbol = " "
+style = "bg:gh8"
+format = '[[ $symbol( $version) ](fg:gh0 bg:gh8)]($style)'
+
+[kotlin]
+symbol = ""
+style = "bg:gh8"
+format = '[[ $symbol( $version) ](fg:gh0 bg:gh8)]($style)'
+
+[haskell]
+symbol = ""
+style = "bg:gh8"
+format = '[[ $symbol( $version) ](fg:gh0 bg:gh8)]($style)'
+
+[python]
+symbol = ""
+style = "bg:gh8"
+format = '[[ $symbol( $version) ](fg:gh0 bg:gh8)]($style)'
+
+# ===== CONTAINERS =====
+[docker_context]
+symbol = ""
+style = "bg:gh10"
+format = '[[ $symbol( $context) ](fg:gh4 bg:gh10)]($style)'
+
+# ===== TIME =====
+[time]
+disabled = false
+time_format = "%R"
+style = "bg:gh2"
+format = '[[  $time ](fg:gh4 bg:gh2)]($style)'
+
+# ===== PROMPT =====
+[character]
+success_symbol = '[](bold fg:#a3be8c)'
+error_symbol   = '[](bold fg:#bf616a)'
+vimcmd_symbol  = '[](bold fg:gh7)'
+vimcmd_replace_one_symbol = '[](bold fg:gh9)'
+vimcmd_replace_symbol     = '[](bold fg:gh9)'
+vimcmd_visual_symbol      = '[](bold fg:gh8)'

@@ -1,0 +1,93 @@
+@import "../theme.css";
+
+/* temperature */
+
+#custom-left_div.1 {
+	color: @accent-light;
+	padding-left: 10px;
+}
+#temperature {
+	background-color: @accent-light;
+	text-shadow: 0 0 2px @main-bg;
+}
+
+/* memory */
+
+#custom-left_div.2 {
+	background-color: @accent-light;
+	color: @main-bg;
+}
+#memory {
+	background-color: @main-bg;
+}
+
+/* cpu */
+
+#custom-left_div.3 {
+	background-color: @main-bg;
+	color: @accent;
+}
+#cpu {
+	background-color: @accent;
+	text-shadow: 0 0 2px @main-bg;
+}
+#custom-left_inv.1 {
+	color: @accent;
+}
+
+/* distro icon */
+
+#custom-left_div.4,
+#custom-right_div.3 {
+	color: @accent-light;
+}
+#custom-distro {
+	padding: 0 10px 2px 4px;
+	font-size: 26px;
+	background-color: @accent-light;
+	color: @main-fg;
+	text-shadow: 0 0 5px @main-bg;
+}
+
+/* time */
+
+#custom-right_inv.3 {
+	color: @accent;
+}
+#clock.time {
+	padding-left: 12px;
+	padding-right: 10px;
+	background-color: @accent;
+	text-shadow: 0 0 2px @main-bg;
+}
+#custom-right_div.4 {
+	background-color: @main-bg;
+	color: @accent;
+}
+
+/* date */
+
+#clock.date {
+	padding-left: 6px;
+	background-color: @main-bg;
+}
+#custom-right_div.5 {
+	background-color: @accent-light;
+	color: @main-bg;
+}
+
+/* network/quick settings */
+
+#network {
+	background-color: @accent-light;
+	padding: 0 6px 0 8px;
+	text-shadow: 0 0 2px @main-bg;
+}
+#bluetooth {
+	background-color: @accent-light;
+	padding: 0 5px;
+	text-shadow: 0 0 2px @main-bg;
+}
+#custom-right_div.6 {
+	color: @accent-light;
+}

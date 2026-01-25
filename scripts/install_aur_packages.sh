@@ -1,4 +1,11 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
+cd Packages/python-iniparse
+
+echo "⬇️ Installing python-iniparse"
+yes | makepkg -sci --noconfirm
+
+sleep 2
 
 mkdir -p $HOME/yay-install
 cd $HOME/yay-install
@@ -12,6 +19,7 @@ yes | makepkg -sci --noconfirm
 sleep 2
 
 aur_packages=(
+    crudini
     brave-bin
     localsend-bin
 )
@@ -24,5 +32,4 @@ done
 
 sleep 2
 
-cd $HOME
-rm -rf yay-install
+rm -rf $HOME/yay-install

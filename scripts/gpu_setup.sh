@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 if lspci -nn | grep -qi "1002:"; then
     echo "AMD GPU detected..."

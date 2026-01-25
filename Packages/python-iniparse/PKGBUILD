@@ -1,0 +1,22 @@
+pkgname=python-iniparse
+pkgver=git
+pkgrel=1
+pkgdesc="A Python library for parsing and writing INI files, with ordered parsing."
+arch=('any')
+url="https://github.com/candlepin/python-iniparse"
+license=('MIT')
+depends=('python' 'python-setuptools' 'python-wheel')
+source=("git+https://github.com/candlepin/python-iniparse.git#commit=main")
+sha256sums=('SKIP')
+
+# Build function to clone the repo and install
+build() {
+  cd "$srcdir/${pkgname}"
+  python setup.py build
+}
+
+# Package function to install the package
+package() {
+  cd "$srcdir/${pkgname}"
+  python setup.py install --prefix=/usr --root="${pkgdir}"
+}

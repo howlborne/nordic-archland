@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 echo "Hiding unneeded applications from rofi drun..."
 
@@ -55,7 +55,6 @@ unneeded=(
     /usr/share/applications/kcm_virtualkeyboard.desktop
     /usr/share/applications/kcm_wallpaper.desktop
     /usr/share/applications/kcm_webshortcuts.desktop
-    /usr/share/applications/kdesystemsettings.desktop
     /usr/share/applications/kitty-open.desktop
     /usr/share/applications/ktelnetservice6.desktop
     /usr/share/applications/libreoffice-xsltfilter.desktop

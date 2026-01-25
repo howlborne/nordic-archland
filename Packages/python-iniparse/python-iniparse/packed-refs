@@ -1,0 +1,35 @@
+# pack-refs with: peeled fully-peeled sorted 
+7f5066b06e8dd470d791bcc4c6a2abf01cddd3dc refs/heads/jhnidek/delete_travis_file
+e7c08ea59ad82e9f452eeddf2468841f6ed460c6 refs/heads/main
+7808473e9f749f2ce3ce7d4e540b99ccb6cbc1f4 refs/pull/1/head
+b9dfe50b449d796beffedd74cf71b6675ccf64f1 refs/pull/10/head
+fdc577c9471b801040ded53b379ae8e56c43699e refs/pull/11/head
+7ae986e69577d0b24aa299914d13db2edebf3e98 refs/pull/15/head
+2ff82653a3b30f4831e3d283597fed1133a2c76b refs/pull/16/head
+8f01885fa716f51fa2aa0c7e75ac6f67442ac9d7 refs/pull/17/head
+b2ad0960bf6c73fa6ae7f26231b02639da2222e0 refs/pull/18/head
+23c4ff99fccae91c78a624d59117da6e4955f54d refs/pull/20/head
+bb23cb3b7d2055d9cf592b37af7562b9875bb550 refs/pull/21/head
+947437a6602189608e89aaf7a069659b7e3eac42 refs/pull/22/head
+d9a083bafaa2df338a3176ee9f1433718b3a1090 refs/pull/24/head
+6073da55396406eca5efd427da8bcdfb7314c989 refs/pull/25/head
+85a428c9bf23b972f49613fd862bf3d3fdf73806 refs/pull/27/head
+033c0aa3e1a51cb70a97762252059e70cc2f671c refs/pull/29/head
+8977225bbabbb2bb4ff5c094733fa7fcf577cc28 refs/pull/32/head
+61f868a39fc082f33b2af79860576dac56868977 refs/pull/34/head
+1983ad30720bb159ef0613382668f4c52bb28190 refs/pull/35/head
+c6b5d6f85beebe3327d8604b8ea933052c7908b3 refs/pull/36/head
+2eeb6c41fed43789eb4c9de9cb4fb73072f7b2dd refs/pull/37/head
+42d34719f01229b25d2725cb56e7a527a3ec35cc refs/pull/38/head
+da1ad482a52d6e3338753a3b02443e4f16c0a620 refs/pull/39/head
+d166dfba0e6557044d3cb95224137546e31e4fc4 refs/pull/4/head
+71fb03f9c46b702887374ab815c3b5090862fe3b refs/pull/41/head
+2f77b727acaa37e87f231a80bd8fdad9dc08833d refs/pull/42/head
+bf1dafaa204957e28483832b97a07df1ee53922e refs/pull/43/head
+99447ce5b89fdfa43be0b7a4d9c14be4094b9fd7 refs/pull/6/head
+75eef384b3cc037fffe7410aca2698975e710e24 refs/pull/7/head
+6954bf79f7a38840b38be6c1e0beea1eee760d0b refs/pull/8/head
+14e5bd9937b6b804281d0de8849c1bf61f49346d refs/pull/9/head
+dd4c90f9509514b96978d032fb3df2266f6cf21b refs/tags/0.5
+^0bdb6edf59f01ab86fa71510af0ccaaa3526fe90
+0f3da0a21e933e4a7327fd6a2b8e2218315df0ef refs/tags/0.5.1
