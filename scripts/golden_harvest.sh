@@ -32,5 +32,5 @@ THEMES=$HOME/.local/share/archland/global-themes
     gsettings set org.gnome.desktop.interface cursor-theme "GoldenHarvest-cursors"
 #     gsettings set org.gnome.desktop.interface gtk-theme 'GoldenHarvest-v40'
 
-# restart hyprland
-hyprctl dispatch exit
+# restart hyprland -> since we are using greetd auto-login, logging out actually restarts hyprland
+loginctl terminate-session $XDG_SESSION_ID
