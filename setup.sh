@@ -34,6 +34,7 @@ sudo bash -c 'echo -e "[preferred]\ndefault = hyprland;kde;gtk\norg.freedesktop.
 # greetd auto-login config --> hyprlock
 envsubst < greetd/config.toml.in > greetd/config.toml
 sudo cp ./greetd/config.toml /etc/greetd
+sudo ./scripts/greetd_kwallet.sh
 
 # starship & fastfetch >> .bashrc
 echo 'fastfetch --config $HOME/.config/kitty/fastfetch/config.jsonc' >> ~/.bashrc
