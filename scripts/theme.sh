@@ -2,7 +2,7 @@
 
 THEMES=$HOME/.local/share/archland/global-themes
 
-mkdir -p $THEMES
+mkdir -p $THEMES/scripts
 mkdir -p $HOME/Pictures/hyprpaper-wallpapers
 mkdir -p $HOME/.config/gtk-3.0
 mkdir -p $HOME/.config/gtk-4.0
@@ -31,6 +31,7 @@ read -p $'Which theme do you want to set by default?\n(1)Nordveil    (Default)\n
 
 if [[ "$SELECTED" -eq 2 ]]; then
     echo "Installing Golden Harvest..."
+    echo "Golden Harvest" > /tmp/archland_default
 
     # symlink .config dirs
     for dir in $THEMES/golden-harvest/.config/*/; do
@@ -47,8 +48,7 @@ if [[ "$SELECTED" -eq 2 ]]; then
     # symlink wallpaper
     ln -sf $THEMES/golden-harvest/Pictures/background.png $HOME/Pictures/hyprpaper-wallpapers/
 
-    # apply GoldenHarvest KDE theme
-    plasma-apply-colorscheme GoldenHarvest
+    # set GoldenHarvest KDE theme
     kwriteconfig6 --file kdeglobals --group Icons --key Theme GoldenHarvest
 
     # apply GoldenHarvest GTK theme
@@ -63,6 +63,7 @@ if [[ "$SELECTED" -eq 2 ]]; then
     gsettings set org.gnome.desktop.interface gtk-theme 'GoldenHarvest-v40'
 else
     echo "Installing Nordveil..."
+    echo "Nordveil" > /tmp/archland_default
 
     # symlink .config dirs
     for dir in $THEMES/nordveil/.config/*/; do
@@ -79,8 +80,7 @@ else
     # symlink wallpaper
     ln -sf $THEMES/nordveil/Pictures/background.png $HOME/Pictures/hyprpaper-wallpapers/
 
-    # apply Nordveil KDE theme
-    plasma-apply-colorscheme Nordveil
+    # set Nordveil KDE theme
     kwriteconfig6 --file kdeglobals --group Icons --key Theme Nordveil
 
     # apply Nordveil GTK theme
