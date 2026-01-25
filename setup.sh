@@ -35,6 +35,8 @@ sudo bash -c 'echo -e "[preferred]\ndefault = hyprland;kde;gtk\norg.freedesktop.
 envsubst < greetd/config.toml.in > greetd/config.toml
 sudo cp ./greetd/config.toml /etc/greetd
 sudo ./scripts/greetd_kwallet.sh
+mkdir -p $HOME/.local/share/dbus-1/services
+echo -e '[D-BUS Service]\nName=org.freedesktop.secrets\nExec=/usr/bin/kwalletd6' > $HOME/.local/share/dbus-1/services/org.freedesktop.secrets.service
 
 # starship & fastfetch >> .bashrc
 echo 'fastfetch --config $HOME/.config/kitty/fastfetch/config.jsonc' >> ~/.bashrc
